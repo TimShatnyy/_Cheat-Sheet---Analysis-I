@@ -1,0 +1,162 @@
+\documentclass[8pt, a4paper]{extarticle}
+
+\usepackage{enumerate, amsmath, amsthm, amssymb, cancel, mathtools}
+
+\usepackage[a4paper, left=0.7cm, right=0.7cm, top=0.7cm, bottom=0.7cm, landscape]{geometry}
+
+\usepackage{algorithm}
+\usepackage{booktabs} 
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{svg}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{forest}
+\usepackage[stretch=10,shrink=20]{microtype}
+\usepackage{anyfontsize}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{soul}
+\usepackage{amsmath}
+
+\usepackage{anyfontsize}
+
+
+
+\titleformat{\section}
+  {\fontsize{9pt}{11pt}\selectfont\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\fontsize{8pt}{10pt}\selectfont\bfseries}
+  {\thesubsection}{1em}{}
+
+% \titlespacing*{\section}
+%   {0pt}{1.5ex}{0.8ex}
+
+% \titlespacing*{\subsection}
+%   {0pt}{1.2ex}{0.6ex}
+
+
+\usepackage{tcolorbox}
+
+
+\author{Timofey Shatnyy}
+
+\linespread{1.3}
+
+\newtcbox{\tsLabelYellow}{
+    on line,
+    colback=yellow!100,
+    colframe=yellow!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\tsLabelOrange}{
+    on line,
+    colback=orange!55,
+    colframe=orange!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\tsLabelBlue}{
+    on line,
+    colback=blue!45,
+    colframe=blue!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\tsLabelLightBlue}{
+    on line,
+    colback=blue!25,
+    colframe=blue!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\tsLabelGreen}{
+    on line,
+    colback=green!55,
+    colframe=green!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newtcbox{\tsLabelRed}{
+    on line,
+    colback=red!55,
+    colframe=red!0,
+    arc=3pt,
+    boxrule=0pt,
+    left=0pt,right=0pt,top=-1pt,bottom=-1pt
+}
+
+\newcommand{\tsV}[1]{
+    \mathbf{#1}
+}
+
+
+\newcommand{\tsVec}[1]{
+    \mathbf{#1}
+}
+
+\newcommand{\tsB}[1]{
+    \{#1\}
+}
+
+
+\newcommand{\tsS}[1]{
+    \mathbb{#1}
+}
+
+\newcommand{\tsIdea}[2]{
+    \tsLabelRed{\textbf{#1:}} \(\tsPoint\)#2
+}
+
+\newcommand{\tsThe}[2]{
+    \tsLabelYellow{\textbf{T #1:}} \(\tsPoint\)#2
+}
+
+\newcommand{\tsDef}[2]{
+    \tsLabelOrange{\textbf{D #1:}} \(\tsPoint\)#2
+}
+
+\newcommand{\tsLem}[2]{
+    \tsLabelBlue{\textbf{L #1:}}  \(\tsPoint\)#2
+}
+
+\newcommand{\tsCor}[2]{
+    \tsLabelGreen{\textbf{C #1:}}  \(\tsPoint\)#2
+}
+
+\newcommand{\tsProp}[2]{
+    \tsLabelLightBlue{\textbf{P #1:}}  \(\tsPoint\)#2
+}
+
+\newcommand{\tsPoint}[0]{
+    \\ \bullet
+}
+
+
+\begin{document}
+% \setcounter{section}{4}
+\begin{multicols}{3}
+    % {\fontsize{7}{7}\selectfont
+    \section{Reelle Zahlen, Euklidische Räume, Komplexe Zahlen}
+    \input{1.1-FieldOfRealNumbers}
+    % }
+\end{multicols}
+\end{document}
