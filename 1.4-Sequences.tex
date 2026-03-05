@@ -1,0 +1,206 @@
+\subsection{Sequences}
+\tsDef{(Sequence)}{
+    A sequence $(a_n)_{n \in \mathbb{N}_0}$ (also written $(a_n)_{n \ge 0}$ or $(a_n)_{n=0}^{\infty}$)
+    is an infinite list of numbers, where each entry is called a \emph{term} of the sequence.
+    A sequence can also be viewed as a function
+    \[
+        f : \mathbb{N}_0 \to \mathbb{R}
+        \quad (\text{or } f : \mathbb{N} \to \mathbb{R}),
+    \]
+    whose values are
+    \(
+    f(n) = a_n.
+    \)
+}
+\\
+\tsDef{(Ways to Describe a Sequence)}{
+    One way to describe a sequence is by giving an explicit formula for each term:
+    \[
+        a_n = f(n).
+    \]
+    Another possibility is to define the sequence recursively, constructing each new term
+    from previous ones:
+    \[
+        a_n = g(a_{n-1}, a_{n-2}, \dots).
+    \]
+    The functions $f$ and $g$ are called the \emph{rule of formation} of the sequence.
+}
+\\
+\tsDef{(Convergence/Divergence)}{
+    A sequence $(a_n)_{n \in \mathbb{N}_0} \subset \mathbb{R}$ is called \emph{convergent}
+    if there exists a number $L \in \mathbb{R}$ such that
+    \[
+        \forall \varepsilon > 0 \; \exists N > 0 \; \text{such that} \;
+        \forall n > N : |a_n - L| < \varepsilon .
+    \]
+    The number $L$ is called the \emph{limit} of the sequence, and we write
+    \[
+        \lim_{n \to \infty} a_n = L.
+    \]
+    If no such $L$ exists, the sequence is called \emph{divergent}.
+}
+\\
+\tsThe{(Uniqueness of the Limit)}{
+    A convergent sequence has exactly one unique limit.
+}
+\\
+\tsDef{(Divergence to infinity)}{
+    Let $(a_n)_{n \in \mathbb{N}_0}$ be a sequence.
+
+    \begin{itemize}
+        \item If
+              \[
+                  \forall M > 0 \; \exists N > 0 \; \text{such that} \;
+                  \forall n > N : a_n > M,
+              \]
+              then the sequence diverges to infinity and we write
+              \[
+                  \lim_{n \to \infty} a_n = \infty.
+              \]
+        \item If
+              \[
+                  \forall M > 0 \; \exists N > 0 \; \text{such that} \;
+                  \forall n > N : a_n < -M,
+              \]
+              then the sequence diverges to minus infinity and we write
+              \[
+                  \lim_{n \to \infty} a_n = -\infty.
+              \]
+    \end{itemize}
+}
+\tsDef{(Subsequence)}{
+    Let $(a_n)_{n \in \mathbb{N}_0}$ be a sequence in $\mathbb{R}$.
+    A \emph{subsequence} is a sequence of the form
+    \[
+        (a_{n_k})_{k \in \mathbb{N}_0},
+    \]
+    where $(n_k)_{k \in \mathbb{N}_0}$ is a sequence of non-negative integers satisfying
+    \[
+        n_{k+1} > n_k \quad \text{for all } k \in \mathbb{N}_0.
+    \]
+}
+\\
+\tsLem{(Limit of a sequence and its subsequence)}{
+    Let $(a_n)_{n \in \mathbb{N}_0}$ be a convergent sequence with limit $L \in \mathbb{R}$.
+    Then every subsequence $(a_{n_k})_{k \in \mathbb{N}_0}$ also converges to the same limit $L$.
+}
+\\
+\tsDef{(Accumulation Point)}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ be a sequence in $\mathbb{R}$.
+    A number $A\in\mathbb{R}$ is called an accumulation point of the sequence if
+    \[
+        \forall \varepsilon>0 \;\forall N\in\mathbb{N}_0 \;\exists n\ge N \text{ such that } |a_n-A|<\varepsilon.
+    \]
+    Intuitively, every interval $(A-\varepsilon,A+\varepsilon)$ contains terms $a_n$ for infinitely many indices $n$.
+}
+\\
+\tsThe{(Characterization of Accumulation Points)}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ be a sequence in $\mathbb{R}$.
+    A number $A\in\mathbb{R}$ is an accumulation point of the sequence if and only if there exists a convergent subsequence $(a_{n_k})_{k\in\mathbb{N}_0}$ such that
+    \[
+        \lim_{k\to\infty} a_{n_k}=A.
+    \]
+}
+\\
+\tsCor{(Accumulation Point of a Convergent Sequence)}{
+    Every convergent sequence $(a_n)_{n\in\mathbb{N}_0}$ in $\mathbb{R}$ has exactly one accumulation point, which coincides with its limit.
+}
+\\
+\tsCor{(Infinite Occurrence Near an Accumulation Point)}{
+    Let $A$ be an accumulation point of the sequence $(a_n)_{n\in\mathbb{N}_0}$.
+    Then for every $\varepsilon>0$ there exist infinitely many terms of the sequence lying in the interval
+    \(
+    (A-\varepsilon,A+\varepsilon).
+    \)
+}
+\\
+\tsThe{(Algebra of Limits)}{
+    Assume
+    \[
+        \lim_{n\to\infty} a_n = K, \qquad
+        \lim_{n\to\infty} b_n = L
+    \]
+    with $K,L\neq\pm\infty$ and let $C$ be a constant. Then
+    \[
+        \begin{aligned}
+            \lim_{n\to\infty}(a_n+b_n) & = K+L \\
+            \lim_{n\to\infty}(a_n-b_n) & = K-L \\
+            \lim_{n\to\infty}(a_n b_n) & = KL  \\
+            \lim_{n\to\infty}(C a_n)   & = CK
+        \end{aligned}
+    \]
+    If $L\neq0$ and $b_n\neq0$ then
+    \[
+        \lim_{n\to\infty}\frac{a_n}{b_n} = \frac{K}{L}.
+    \]
+    If $K<L$ then there exists $N$ such that $a_n<b_n$ for all $n\ge N$.
+    If there exists $N$ such that $a_n\le b_n$ for all $n\ge N$, then $K\le L$.
+}
+\\
+\tsThe{(Important Limits)}{
+    \[
+        \lim_{n\to\infty}\frac{\log n}{n} = 0 = \lim_{n\to\infty}\frac{\ln n}{n}
+    \]
+    \[
+        \lim_{n\to\infty} n^{1/n}=1
+    \]
+    \[
+        \lim_{n\to\infty} x^{1/n}=1 \quad (x>0)
+    \]
+    \[
+        \forall x\in\mathbb{R}:\quad
+        \lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n = e^x
+    \]
+    \[
+        \forall x\in\mathbb{R}:\quad
+        \lim_{n\to\infty}\frac{x^n}{n!}=0
+    \]
+}
+\\
+\tsThe{(Sandwich Theorem)}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ and $(c_n)_{n\in\mathbb{N}_0}$ be convergent sequences with
+    \[
+        \lim_{n\to\infty}a_n=L, \qquad
+        \lim_{n\to\infty}c_n=L
+    \]
+    and suppose there exists $N_0$ such that
+    \[
+        a_n \le b_n \le c_n \quad \text{for all } n\ge N_0.
+    \]
+    Then $(b_n)_{n\in\mathbb{N}_0}$ is also convergent and
+    \[
+        \lim_{n\to\infty}b_n=L.
+    \]
+}
+\\
+\tsDef{(Bounded Sequence)}{
+    A sequence $(a_n)_{n\in\mathbb{N}_0}$ is called bounded below or bounded above if the set
+    \[
+        M=\{a_n \mid n\in\mathbb{N}_0\}
+    \]
+    has a lower bound or an upper bound respectively.
+    A sequence that is bounded both above and below is called a bounded sequence.
+}
+\\
+\tsDef{(Monotone Sequence)}{
+    A sequence $(a_n)_{n\in\mathbb{N}_0}$ is called monotone decreasing if
+    \[
+        m>n \Rightarrow a_m \le a_n
+    \]
+    and monotone increasing if
+    \[
+        m>n \Rightarrow a_m \ge a_n.
+    \]
+    It is called strictly monotone decreasing if
+    \[
+        m>n \Rightarrow a_m < a_n
+    \]
+    and strictly monotone increasing if
+    \[
+        m>n \Rightarrow a_m > a_n.
+    \]
+}
+\\
+\tsThe{(Monotone Convergence Theorem)}{
+    Every bounded and monotone sequence converges.
+}

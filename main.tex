@@ -122,6 +122,10 @@
     \mathbb{#1}
 }
 
+\newcommand{\tsEx}[2]{
+    \tsLabelLightBlue{\textbf{#1:}} \(\tsPoint\)#2
+}
+
 \newcommand{\tsIdea}[2]{
     \tsLabelRed{\textbf{#1:}} \(\tsPoint\)#2
 }
@@ -155,10 +159,14 @@
 % \setcounter{section}{4}
 \begin{multicols}{3}
     % {\fontsize{7}{7}\selectfont
-    \section{Reelle Zahlen, Euklidische Räume, Komplexe Zahlen}
     \input{1.1-FieldOfRealNumbers}
     \input{1.2-VectorsVectorSpaces}
+    \newpage
     \input{1.3-ComplexNumbers}
+    \newpage
+    \input{1.4-Sequences}
+    \newpage
+    \input{1.4-Sequences-Examples}
     % }
 \end{multicols}
 \end{document}
