@@ -1,0 +1,213 @@
+\subsection{Function basics}
+\tsDef{Function}{
+    A function (mapping) is a rule that assigns to each admissible input exactly one output in the target set.
+    The set of all possible inputs is called the \emph{domain}, denoted by $\mathrm{domain}(f)$ or $D$.
+    The set of all actually attained outputs is called the \emph{image}, denoted by $\mathrm{image}(f)$ or $W$.
+    \[
+        f : \mathrm{domain}(f) \to \mathrm{range}(f),
+        \quad
+        x \mapsto f(x).
+    \]
+    The input is called the \emph{independent variable}, the output the \emph{dependent variable}.
+}
+\\
+\tsDef{Restriction of a Function}{
+    Let $f : D(f) \to \mathbb{R}$ and let $D_0 \subseteq D(f)$.
+    The restriction of $f$ to $D_0$ is the function
+    \[
+        f|_{D_0} : D_0 \to \mathbb{R},
+        \quad
+        f|_{D_0}(x) = f(x).
+    \]
+    Note that $f$ and $f|_{D_0}$ are, in general, different functions.
+}
+\\
+\tsDef{Bounded Functions}{
+    Let $f : D(f) \to \mathbb{R}$.
+    \begin{itemize}
+        \item $f$ is \emph{bounded above} if there exists $M \in \mathbb{R}$ such that
+              \[
+                  f(x) \le M \quad \forall x \in D(f).
+              \]
+        \item $f$ is \emph{bounded below} if there exists $M \in \mathbb{R}$ such that
+              \[
+                  f(x) \ge M \quad \forall x \in D(f).
+              \]
+        \item $f$ is \emph{bounded} if there exists $M \in \mathbb{R}$ such that
+              \[
+                  |f(x)| \le M \quad \forall x \in D(f).
+              \]
+    \end{itemize}
+}
+\tsDef{Injective, Surjective, Bijective}{
+    Let $f : X \to Y$.
+    \begin{itemize}
+        \item $f$ is \emph{injective} if
+              \[
+                  f(x_1) = f(x_2) \Rightarrow x_1 = x_2.
+              \]
+        \item $f$ is \emph{surjective} if
+              \[
+                  \forall y \in Y \; \exists x \in X : f(x) = y.
+              \]
+        \item $f$ is \emph{bijective} if it is both injective and surjective.
+    \end{itemize}
+}
+\tsDef{Composition}{
+    Let $f : X \to Y$ and $g : Y \to Z$.
+    The composition is defined by
+    \[
+        g \circ f : X \to Z,
+        \quad
+        (g \circ f)(x) = g(f(x)).
+    \]
+}
+\tsDef{Identity and Inverse}{
+    For a set $X$, the identity function is defined by
+    \[
+        \mathrm{id}_X(x) = x \quad \forall x \in X.
+    \]
+    If $f : X \to Y$ is bijective, then there exists a unique function
+    \[
+        f^{-1} : Y \to X
+    \]
+    such that
+    \[
+        f^{-1} \circ f = \mathrm{id}_X,
+        \quad
+        f \circ f^{-1} = \mathrm{id}_Y.
+    \]
+    This function is called the \emph{inverse} of $f$.
+}
+\\
+\tsDef{Monotonicity}{
+    Let $f : D(f) \subseteq \mathbb{R} \to \mathbb{R}$.
+    \begin{itemize}
+        \item $f$ is \emph{monotonically increasing} if
+              \[
+                  x_1 < x_2 \Rightarrow f(x_1) \le f(x_2).
+              \]
+        \item $f$ is \emph{strictly increasing} if
+              \[
+                  x_1 < x_2 \Rightarrow f(x_1) < f(x_2).
+              \]
+        \item $f$ is \emph{monotonically decreasing} if
+              \[
+                  x_1 < x_2 \Rightarrow f(x_1) \ge f(x_2).
+              \]
+        \item $f$ is \emph{strictly decreasing} if
+              \[
+                  x_1 < x_2 \Rightarrow f(x_1) > f(x_2).
+              \]
+    \end{itemize}
+}
+\tsThe{Strict Monotonicity Implies Injectivity}{
+    Every strictly monotone function is injective.
+}
+\\
+\tsDef{Even and Odd Functions}{
+    Let $f : \mathbb{R} \to \mathbb{R}$.
+    \begin{itemize}
+        \item $f$ is \emph{even} if
+              \[
+                  f(-x) = f(x).
+              \]
+        \item $f$ is \emph{odd} if
+              \[
+                  f(-x) = -f(x).
+              \]
+    \end{itemize}
+}
+\tsDef{Convexity and Concavity (Geometric)}{
+    The graph of a function is called
+    \begin{itemize}
+        \item \emph{convex} if it bends to the left when moving from left to right,
+        \item \emph{concave} if it bends to the right when moving from left to right.
+    \end{itemize}
+}
+\subsection{Limits of Functions}
+\tsDef{Limit of a Function}{
+    Let $f : D(f) \to \mathbb{R}$ and $x_0 \in \mathbb{R}$.
+    A number $L \in \mathbb{R}$ is called the limit of $f(x)$ at $x_0$ if
+    \[
+        \forall \varepsilon > 0 \; \exists \delta > 0 \; \text{such that}
+        \quad
+        x \in D(f), \; |x - x_0| < \delta
+        \Rightarrow
+        |f(x) - L| < \varepsilon.
+    \]
+    The limit is uniquely determined.
+}
+\\
+\tsDef{One-Sided Limits}{
+    One-Sided Limits
+    \begin{itemize}
+        \item Right-hand limit:
+              \[
+                  \lim_{x \to x_0^+} f(x) = L
+              \]
+        \item Left-hand limit:
+              \[
+                  \lim_{x \to x_0^-} f(x) = L
+              \]
+    \end{itemize}
+}
+\tsDef{Limits at Infinity}{
+    Limits at Infinity
+    \begin{itemize}
+        \item
+              \(
+              \lim_{x \to \infty} f(x) = L
+              \)
+        \item
+              \(
+              \lim_{x \to -\infty} f(x) = L
+              \)
+    \end{itemize}
+}
+\tsDef{Infinite Limits}{
+    Infinite Limits
+    \begin{itemize}
+        \item
+              \(
+              \lim_{x \to c} f(x) = \infty
+              \)
+        \item
+              \(
+              \lim_{x \to c} f(x) = -\infty
+              \)
+    \end{itemize}
+}
+\tsThe{Limit Laws}{
+    Let
+    \[
+        \lim_{x \to c} f(x) = K,
+        \quad
+        \lim_{x \to c} g(x) = L,
+        \quad
+        K,L \neq \pm\infty.
+    \]
+    Then:
+    \begin{itemize}
+        \item
+              \(
+              \lim_{x \to c} (f+g) = K+L
+              \)
+        \item
+              \(
+              \lim_{x \to c} (f-g) = K-L
+              \)
+        \item
+              \(
+              \lim_{x \to c} (fg) = KL
+              \)
+        \item
+              \(
+              \lim_{x \to c} (A f) = A K
+              \)
+        \item If $L \neq 0$:
+              \(
+              \lim_{x \to c} \frac{f}{g} = \frac{K}{L}
+              \)
+    \end{itemize}
+}

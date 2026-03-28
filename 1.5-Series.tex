@@ -1,0 +1,209 @@
+\subsection{Series}
+
+\tsDef{Series}{
+    A (formal) expression of the form
+    \[
+        a_0 + a_1 + a_2 + \cdots = \sum_{n=0}^{\infty} a_n
+    \]
+    is called a \emph{series}. The terms $a_n$ are called elements or summands.
+    If the sequence of partial sums
+    \[
+        s_n := \sum_{k=0}^{n} a_k
+    \]
+    converges to a limit $L \in \mathbb{R}$, then the series is said to \emph{converge}, and we write
+    \[
+        \sum_{n=0}^{\infty} a_n = L.
+    \]
+    Otherwise, the series is called \emph{divergent}.
+}
+\\
+\tsThe{Necessary Condition for Convergence}{
+    If the series $\sum_{n=0}^{\infty} a_n$ converges, then necessarily
+    \[
+        \lim_{n\to\infty} a_n = 0.
+    \]
+}
+\\
+\tsLem{Linearity of Series}{
+    Let $\sum_{n=0}^{\infty} a_n$ and $\sum_{n=0}^{\infty} b_n$ be convergent series. Then:
+
+    \[
+        \sum_{n=0}^{\infty} (a_n + b_n)
+        =
+        \sum_{n=0}^{\infty} a_n
+        +
+        \sum_{n=0}^{\infty} b_n,
+    \]
+
+    \[
+        \sum_{n=0}^{\infty} C a_n
+        =
+        C \sum_{n=0}^{\infty} a_n
+        \quad (C \in \mathbb{R}).
+    \]
+}
+\\
+\tsLem{Tail of a Series}{
+    Let $\sum_{n=0}^{\infty} a_n$ be a series. For any $N \in \mathbb{N}_0$:
+
+    \[
+        \sum_{n=0}^{\infty} a_n \text{ converges}
+        \quad \Longleftrightarrow \quad
+        \sum_{n=N}^{\infty} a_n \text{ converges},
+    \]
+    and in that case
+    \[
+        \sum_{n=0}^{\infty} a_n
+        =
+        \sum_{n=0}^{N-1} a_n
+        +
+        \sum_{n=N}^{\infty} a_n.
+    \]
+}
+\\
+\tsThe{Series with Non-Negative Terms}{
+    Let $a_n \ge 0$ for all $n$. Then the sequence of partial sums
+    \[
+        s_n = \sum_{k=0}^{n} a_k
+    \]
+    is monotonically increasing. If $(s_n)$ is bounded, then the series $\sum_{n=0}^{\infty} a_n$ converges; otherwise, it diverges.
+}
+\\
+\tsThe{Comparison Test}{
+    Let $\sum a_n$, $\sum b_n$, $\sum c_n$ be series with non-negative terms and suppose that for some $N$:
+    \[
+        c_n \le b_n \le a_n \quad \text{for all } n \ge N.
+    \]
+    Then:
+    \begin{itemize}
+        \item If $\sum a_n$ converges, then $\sum b_n$ converges (majorant test).
+        \item If $\sum c_n$ diverges, then $\sum b_n$ diverges (minorant test).
+    \end{itemize}
+}
+\tsDef{Absolute and Conditional Convergence}{
+    A series $\sum a_n$ is called \emph{absolutely convergent} if
+    \(
+    \sum |a_n| \text{ converges}.
+    \)
+    $\tsPoint$ It is called \emph{conditionally convergent} if $\sum a_n$ converges but $\sum |a_n|$ does not.
+}
+\\
+\tsThe{Riemann Rearrangement Theorem}{
+    Let $\sum a_n$ be a conditionally convergent series of real numbers, and let $L \in \mathbb{R}$. Then there exists a bijection $\varphi : \mathbb{N}_0 \to \mathbb{N}_0$ such that
+    \[
+        \sum_{n=0}^{\infty} a_{\varphi(n)} = L.
+    \]
+}
+\tsThe{Rearrangement of Absolutely Convergent Series}{
+    Let $\sum a_n$ be absolutely convergent and let $\varphi : \mathbb{N}_0 \to \mathbb{N}_0$ be a bijection. Then
+    \[
+        \sum_{n=0}^{\infty} a_{\varphi(n)}
+    \]
+    converges absolutely and
+    \[
+        \sum_{n=0}^{\infty} a_n
+        =
+        \sum_{n=0}^{\infty} a_{\varphi(n)}.
+    \]
+}
+\tsThe{Leibniz Criterion}{
+    Let $(a_n)$ be a monotonically decreasing sequence of non-negative real numbers with
+    \[
+        \lim_{n\to\infty} a_n = 0.
+    \]
+    Then the alternating series
+    \[
+        \sum_{n=0}^{\infty} (-1)^n a_n
+    \]
+    converges. Moreover, for all $m \in \mathbb{N}_0$:
+    \[
+        \sum_{n=0}^{2m+1} (-1)^n a_n
+        \le
+        \sum_{n=0}^{\infty} (-1)^n a_n
+        \le
+        \sum_{n=0}^{2m} (-1)^n a_n.
+    \]
+}
+\tsThe{Cauchy Criterion for Series}{
+    The series $\sum_{n=0}^{\infty} a_n$ converges if and only if for every $\varepsilon > 0$ there exists $N$ such that for all $n \ge m \ge N$:
+    \[
+        \left| \sum_{k=m+1}^{n} a_k \right| \le \varepsilon.
+    \]
+}
+\tsThe{Absolute Convergence Implies Convergence}{
+    Every absolutely convergent series converges, and
+    \[
+        \left| \sum_{n=0}^{\infty} a_n \right|
+        \le
+        \sum_{n=0}^{\infty} |a_n|.
+    \]
+}
+\tsThe{Root Test}{
+    Let $(a_n)$ be a sequence and define
+    \[
+        \rho = \limsup_{n\to\infty} |a_n|^{1/n}.
+    \]
+    Then:
+    \begin{itemize}
+        \item If $\rho < 1$, the series $\sum a_n$ converges absolutely.
+        \item If $\rho > 1$, the series $\sum a_n$ diverges.
+    \end{itemize}
+}
+\tsThe{Ratio Test}{
+    Let $(a_n)$ with $a_n \neq 0$ and define
+    \[
+        \rho = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right|.
+    \]
+    Then:
+    \begin{itemize}
+        \item If $\rho < 1$, the series $\sum a_n$ converges absolutely.
+        \item If $\rho > 1$, the series $\sum a_n$ diverges.
+    \end{itemize}
+}
+\tsThe{Cauchy Product}{
+    Let $\sum a_n$ and $\sum b_n$ be absolutely convergent. Then
+    \[
+        \left( \sum_{n=0}^{\infty} a_n \right)
+        \left( \sum_{n=0}^{\infty} b_n \right)
+        =
+        \sum_{n=0}^{\infty} \left( \sum_{k=0}^{n} a_{n-k} b_k \right),
+    \]
+    and the series on the right converges absolutely.
+}
+\\
+\tsDef{Power Series}{
+    A series of the form
+    \[
+        \sum_{k=0}^{\infty} c_k (x-a)^k
+    \]
+    is called a \emph{power series} centered at $a$ with coefficients $c_k$.
+}
+\\
+\tsDef{Convergence of a Power Series}{
+    For fixed $x$, if the sequence of partial sums
+    \[
+        s_n(x) = \sum_{k=0}^{n} c_k (x-a)^k
+    \]
+    converges, then the power series is said to converge at $x$.
+}
+\\
+\tsThe{Radius of Convergence}{
+    Every power series has a radius of convergence $R$ such that:
+    \begin{itemize}
+        \item The series converges for $|x-a| < R$,
+        \item The series diverges for $|x-a| > R$.
+    \end{itemize}
+    The interval $(a-R, a+R)$ is called the interval of convergence. The radius $R$ is given by:
+    \[
+        \rho = \limsup_{n\to\infty} |c_n|^{1/n}.
+    \]
+    Then
+    \[
+        R =
+        \begin{cases}
+            0              & \text{if } \rho = \infty,     \\
+            \frac{1}{\rho} & \text{if } 0 < \rho < \infty, \\
+            \infty         & \text{if } \rho = 0.
+        \end{cases}
+    \]
+}

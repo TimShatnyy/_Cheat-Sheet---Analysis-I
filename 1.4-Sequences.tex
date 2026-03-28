@@ -204,3 +204,119 @@
 \tsThe{(Monotone Convergence Theorem)}{
     Every bounded and monotone sequence converges.
 }
+\\
+\tsLem{(Convergent sequence = bounded)}{
+    Every convergent sequence is bounded.
+}
+\\
+\tsThe{Monotone Convergence}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ be a sequence of real numbers.
+
+    \begin{itemize}
+        \item[(i)] A monotone sequence converges if and only if it is bounded.
+
+        \item[(ii)] If $(a_n)$ is monotonically increasing, then
+              \[
+                  \lim_{n\to\infty} a_n = \sup\{a_n \mid n\in\mathbb{N}_0\}.
+              \]
+
+        \item[(iii)] If $(a_n)$ is monotonically decreasing, then
+              \[
+                  \lim_{n\to\infty} a_n = \inf\{a_n \mid n\in\mathbb{N}_0\}.
+              \]
+    \end{itemize}
+}
+\tsDef{Limit Superior and Limit Inferior}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ be a sequence.
+    \\
+    \begin{itemize}
+        \item \emph{limit superior} of the sequence
+              \[
+                  \limsup_{n\to\infty} a_n
+                  = \lim_{n\to\infty} \sup\{a_k \mid k \ge n\}
+              \]
+        \item \emph{limit inferior} of the sequence.
+              \[
+                  \liminf_{n\to\infty} a_n
+                  = \lim_{n\to\infty} \inf\{a_k \mid k \ge n\}
+              \]
+    \end{itemize}
+}
+\tsLem{Properties of limsup and liminf}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ be a sequence. Then:
+    \begin{itemize}
+        \item[(i)]
+              \(
+              \limsup_{n\to\infty} a_n
+              = \inf_{n\in\mathbb{N}} \left( \sup\{a_k \mid k \ge n\} \right)
+              \)
+
+        \item[(ii)]
+              \(
+              \liminf_{n\to\infty} a_n
+              = \sup_{n\in\mathbb{N}} \left( \inf\{a_k \mid k \ge n\} \right)
+              \)
+
+        \item[(iii)] If $(a_n)$ is convergent, then
+              \[
+                  \lim_{n\to\infty} a_n
+                  =
+                  \limsup_{n\to\infty} a_n
+                  =
+                  \liminf_{n\to\infty} a_n.
+              \]
+
+        \item[(iv)] A bounded sequence $(a_n)$ converges if and only if
+              \[
+                  \lim_{n\to\infty} a_n
+                  =
+                  \limsup_{n\to\infty} a_n
+                  =
+                  \liminf_{n\to\infty} a_n.
+              \]
+    \end{itemize}
+}
+\tsThe{Characterization via limsup}{
+    Let $(a_n)_{n\in\mathbb{N}_0}$ be a bounded sequence and define
+    \[
+        A = \limsup_{n\to\infty} a_n.
+    \]
+
+    Then:
+
+    \begin{itemize}
+        \item[(i)] $A$ is an accumulation point of the sequence.
+
+        \item[(ii)] For every $\varepsilon > 0$, there are only finitely many indices $n$ such that
+              \[
+                  a_n > A + \varepsilon.
+              \]
+
+        \item[(iii)] For every $\varepsilon > 0$, there are infinitely many indices $n$ such that
+              \[
+                  A - \varepsilon < a_n < A + \varepsilon.
+              \]
+    \end{itemize}
+
+    An analogous statement holds for the limit inferior.
+}
+\\
+\tsCor{Subsequence of a Bounded Sequence}{
+    Every bounded sequence of real numbers has at least one accumulation point and admits a convergent subsequence.
+}
+\\
+\tsDef{Cauchy Sequence}{
+    A sequence $(a_n)_{n\in\mathbb{N}_0} \subset \mathbb{R}$ is called a \emph{Cauchy sequence} if
+
+    \[
+        \forall \varepsilon > 0 \; \exists N \in \mathbb{N} \;\text{such that}\;
+        \forall m,n \ge N:\ |a_n - a_m| < \varepsilon.
+    \]
+}
+\tsLem{Cauchy Sequences are Bounded}{
+    Every Cauchy sequence is bounded.
+}
+\\
+\tsThe{Cauchy Criterion}{
+    A sequence of real numbers converges if and only if it is a Cauchy sequence.
+}
