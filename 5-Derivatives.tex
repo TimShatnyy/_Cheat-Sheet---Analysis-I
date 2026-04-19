@@ -1,0 +1,198 @@
+% \n\s*\n
+\subsection{Differentiation}
+\tsDef{Derivative}{
+    Let $f : D \to \mathbb{R}$ and assume $D$ has no isolated points.
+    The \emph{difference quotient} is
+    \[
+        \frac{f(a+h) - f(a)}{h}.
+    \]
+    If the limit exists, the \emph{derivative} of $f$ at $a$ is defined by
+    \[
+        f'(a)
+        =
+        \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+        =
+        \lim_{b \to a} \frac{f(b) - f(a)}{b - a}.
+    \]Interpretation:
+    \begin{itemize}
+        \item instantaneous rate of change
+        \item slope of the tangent
+        \item sign indicates increase/decrease
+    \end{itemize}
+}
+\tsDef{Derivative Function}{
+    Given $f : D \to \mathbb{R}$, the \emph{derivative function} is
+    \[
+        x \mapsto f'(x).
+    \]
+}
+\tsDef{Differentiability}{
+    A function $f$ is \emph{differentiable at $x$} if $f'(x)$ exists.If this holds for all $x$ in the domain, $f$ is called differentiable.
+}
+\\
+\tsLem{Differentiability Implies Continuity}{
+    If $f$ is differentiable at $x_0$, then $f$ is continuous at $x_0$.
+}
+\\
+\tsDef{One-Sided Derivatives}{
+    \begin{itemize}
+        \item Right derivative:
+              \[
+                  \lim_{h \to 0^+} \frac{f(a+h) - f(a)}{h}
+              \]\item Left derivative:
+              \[
+                  \lim_{h \to 0^-} \frac{f(a+h) - f(a)}{h}
+              \]
+    \end{itemize}
+}
+\tsDef{Higher Derivatives}{
+    Define iteratively:
+    \[
+        f^{(0)} = f, \quad f^{(1)} = f', \quad f^{(2)} = f'', \quad f^{(n+1)} = (f^{(n)})'.
+    \]If $f^{(n)}$ exists, $f$ is $n$-times differentiable.If all derivatives up to order $n$ are continuous, then $f \in C^n(D)$.Define
+    \[
+        C^\infty(D) := \bigcap_{n=0}^{\infty} C^n(D),
+    \]
+    called \emph{smooth functions}.
+}
+\\
+\tsThe{Basic Derivatives}{
+    \begin{itemize}
+        \item Power:
+              \[
+                  (ax^p)' = a p x^{p-1}
+              \]\item Exponential:
+              \[
+                  (a^x)' = \ln(a)\, a^x
+              \]\item Trigonometric:
+              \[
+                  (\sin x)' = \cos x,\quad (\cos x)' = -\sin x,\quad (\tan x)' = \frac{1}{\cos^2 x}
+              \]\item Hyperbolic:
+              \[
+                  (\sinh x)' = \cosh x,\quad (\cosh x)' = \sinh x
+              \]\item Inverse:
+              \[
+                  (\ln x)' = \frac{1}{x},\quad (\arctan x)' = \frac{1}{1+x^2}
+              \]
+    \end{itemize}
+}
+\tsThe{Sum and Product Rule}{
+    For differentiable $f,g$:
+    \[
+        (f+g)' = f' + g'
+    \]
+    \[
+        (fg)' = f'g + fg'
+    \]
+}
+\tsThe{Chain Rule}{
+    If $f$ is differentiable at $x_0$ and $g$ at $f(x_0)$, then
+    \[
+        (g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0).
+    \]
+}
+\tsThe{Quotient Rule}{
+    If $g(x_0)\neq 0$, then
+    \[
+        \left(\frac{f}{g}\right)'(x_0)
+        =
+        \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{g(x_0)^2}.
+    \]
+}
+\\
+\tsThe{Derivative of the Inverse}{
+    Let $f$ be bijective and differentiable with $f'(x_0)\neq 0$.Then
+    \[
+        (f^{-1})'(f(x_0)) = \frac{1}{f'(x_0)}.
+    \]
+}
+\\
+\tsThe{Necessary Condition for Extremum}{
+    If $x_0$ is a local extremum and $f$ is differentiable at $x_0$, then
+    \[
+        f'(x_0) = 0.
+    \]
+}
+\\
+\tsThe{Characterization of Local Extrema}{
+    If $x_0$ is a local extremum, then at least one holds:
+    \begin{itemize}
+        \item $x_0$ is a boundary point
+        \item $f$ is not differentiable at $x_0$
+        \item $f'(x_0) = 0$
+    \end{itemize}
+}
+\tsThe{Rolle's Theorem}{
+    Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$ with $f(a)=f(b)$.Then there exists $\xi \in (a,b)$ such that
+    \[
+        f'(\xi) = 0.
+    \]
+}
+\tsThe{Mean Value Theorem}{
+    Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.Then there exists $\xi \in (a,b)$ such that
+    \[
+        f'(\xi) = \frac{f(b)-f(a)}{b-a}.
+    \]
+}
+\tsThe{l'Hospital's Rule (0/0)}{
+    If
+    \[
+        \lim_{x\to a} f(x)=\lim_{x\to a} g(x)=0
+    \]
+    and
+    \[
+        \lim_{x\to a} \frac{f'(x)}{g'(x)} = L,
+    \]
+    then
+    \[
+        \lim_{x\to a} \frac{f(x)}{g(x)} = L.
+    \]
+}
+\tsThe{l'Hospital's Rule ($\infty/\infty$)}{
+    If
+    \[
+        \lim_{x\to a} |f(x)|=\lim_{x\to a} |g(x)|=\infty
+    \]
+    and
+    \[
+        \lim_{x\to a} \frac{f'(x)}{g'(x)} = L,
+    \]
+    then
+    \[
+        \lim_{x\to a} \frac{f(x)}{g(x)} = L.
+    \]
+}
+\tsThe{l'Hospital at Infinity}{
+    If
+    \[
+        \lim_{x\to\infty} f(x), g(x) \in \{0,\infty\}
+    \]
+    and
+    \[
+        \lim_{x\to\infty} \frac{f'(x)}{g'(x)} = L,
+    \]
+    then
+    \[
+        \lim_{x\to\infty} \frac{f(x)}{g(x)} = L.
+    \]
+}
+\tsThe{Monotonicity via Derivative}{
+    \[
+        f'(x) \ge 0 \iff f \text{ is increasing}
+    \]
+}
+\tsCor{Constant Functions}{
+    $f$ is constant iff
+    \[
+        f'(x) = 0 \quad \forall x.
+    \]
+}
+\tsThe{Convexity via First Derivative}{
+    $f$ is convex iff $f'$ is increasing.
+}
+\tsCor{Convexity via Second Derivative}{
+    If $f$ is twice differentiable:
+    \[
+        f''(x) \ge 0 \iff f \text{ is convex}.
+    \]
+}

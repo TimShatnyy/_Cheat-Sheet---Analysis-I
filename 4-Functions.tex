@@ -211,3 +211,114 @@
               \)
     \end{itemize}
 }
+\subsection{Continuity}
+\tsDef{Continuity}{
+    Let $f : D \to \mathbb{R}$ and $x_0 \in D$. The function $f$ is called \emph{continuous at $x_0$} if
+    \[
+        \forall \varepsilon > 0 \; \exists \delta > 0 \;\text{such that}\;
+        |x - x_0| < \delta \;\Rightarrow\; |f(x) - f(x_0)| < \varepsilon.
+    \]
+    The function is called \emph{continuous} if it is continuous at every point in its domain.
+}
+\\
+\tsDef{One-Sided Continuity}{
+    Let $f : D(f) \to \mathbb{R}$ and $x_0 \in D(f)$.
+    \begin{itemize}
+        \item $f$ is \emph{right-continuous} at $x_0$ if
+              \[
+                  \lim_{x \to x_0^+} f(x) = f(x_0).
+              \]
+        \item $f$ is \emph{left-continuous} at $x_0$ if
+              \[
+                  \lim_{x \to x_0^-} f(x) = f(x_0).
+              \]
+    \end{itemize}
+}
+\tsThe{Sequential Characterization of Continuity}{
+    Let $f : D \subseteq \mathbb{R} \to \mathbb{R}$ and $x_0 \in D$.
+    Then $f$ is continuous at $x_0$ if and only if for every sequence $(x_n)$ with $x_n \to x_0$ we have
+    \[
+        f(x_n) \to f(x_0).
+    \]
+}
+\tsThe{Algebra of Continuous Functions}{
+    Let $f,g : D \subseteq \mathbb{R} \to \mathbb{R}$ be continuous. Then:
+    \begin{itemize}
+        \item $f+g$ is continuous
+        \item $f-g$ is continuous
+        \item $c f$ is continuous for any constant $c \in \mathbb{R}$
+        \item $f \cdot g$ is continuous
+        \item $\frac{f}{g}$ is continuous if $g \neq 0$
+    \end{itemize}
+}
+\tsThe{Continuity of Composition}{
+    Let $f : I \to \mathrm{image}(f)$ and $g : \mathrm{image}(f) \to \mathbb{R}$ be continuous.
+    Then the composition
+    \[
+        g \circ f
+    \]
+    is continuous and
+    \[
+        \lim_{x \to x_0} g(f(x)) = g\!\left( \lim_{x \to x_0} f(x) \right).
+    \]
+}
+\tsThe{Continuity of the Inverse}{
+    Let $I$ be an interval and let $f : I \to J$ be continuous and bijective.
+    Then $J$ is also an interval and the inverse function
+    \[
+        f^{-1} : J \to I
+    \]
+    is continuous.
+}
+\\
+\tsThe{Intermediate Value Theorem}{
+Let $f : [a,b] \to \mathbb{R}$ be continuous and let $c$ be a value between $f(a)$ and $f(b)$.
+Then there exists $x \in [a,b]$ such that
+\[
+    f(x) = c.
+\]
+}
+\tsCor{Zero of a Continuous Function (Bolzano theorem)}{
+    Let $f : I \subseteq \mathbb{R} \to \mathbb{R}$ be continuous and suppose
+    \[
+        f(a) < 0, \quad f(b) > 0.
+    \]
+    Then there exists $x \in (a,b)$ such that
+    \[
+        f(x) = 0.
+    \]
+}
+\tsDef{Compact Interval}{
+    A bounded and closed interval $[a,b]$ is called \emph{compact}.
+}
+\tsLem{Bolzano--Weierstrass for Intervals}{
+    Let $(x_n)$ be a sequence in a compact interval $[a,b]$.
+    Then there exists a subsequence $(x_{n_k})$ such that
+    \[
+        x_{n_k} \to x_0
+        \quad \text{with } x_0 \in [a,b].
+    \]
+}
+\tsDef{Local Extrema}{
+    Let $f : D \subseteq \mathbb{R} \to \mathbb{R}$.
+    \begin{itemize}
+        \item $x_0$ is a \emph{local maximum} if
+              \[
+                  f(x_0) \ge f(x) \quad \forall x \in D.
+              \]
+        \item $x_0$ is a \emph{local minimum} if
+              \[
+                  f(x_0) \le f(x) \quad \forall x \in D.
+              \]
+        \item Local maxima and minima are called \emph{local extrema}.
+    \end{itemize}
+}
+\tsThe{Extreme Value Theorem}{
+    Let $f : I \subseteq \mathbb{R} \to \mathbb{R}$ be continuous and let $I$ be compact.
+    Then $f$ is bounded and attains its maximum and minimum on $I$, i.e.,
+    there exist $x_{\min}, x_{\max} \in I$ such that
+    \[
+        f(x_{\min}) \le f(x) \le f(x_{\max})
+        \quad \forall x \in I.
+    \]
+}
