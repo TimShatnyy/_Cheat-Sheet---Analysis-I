@@ -1,0 +1,291 @@
+\section*{Essential Implications}
+
+{\scriptsize
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{2pt}
+
+% \begin{minipage}[t]{0.495\textwidth}
+\begin{tabular}{@{}>{\bfseries}p{2.9cm} p{8.2cm}@{}}
+\toprule
+
+Regularity &
+$C^\infty \Rightarrow C^n \Rightarrow C^1
+\Rightarrow \text{differentiable}
+\Rightarrow \text{continuous}$ \\
+
+Derivative bound &
+$|f'|\le M
+\Rightarrow \text{Lipschitz}
+\Rightarrow \text{uniformly continuous}
+\Rightarrow \text{continuous}$ \\
+
+Derivative sign &
+$f'>0 \Rightarrow f\text{ strictly increasing}
+\Rightarrow f\text{ injective}$,
+\quad
+$f'<0 \Rightarrow f\text{ strictly decreasing}
+\Rightarrow f\text{ injective}$ \\
+
+Monotonicity &
+$f'\ge0 \Rightarrow f\text{ increasing}$,
+\quad
+$f'\le0 \Rightarrow f\text{ decreasing}$ \\
+
+Constant function &
+$f'=0 \Longleftrightarrow f=\text{constant}$,
+\qquad
+$f'=g' \Rightarrow f-g=C$ \\
+
+Inverse &
+$f\text{ strictly monotone}
+\Rightarrow f\text{ injective}
+\Rightarrow f^{-1}\text{ exists on }f(D)$ \\
+
+Continuous inverse &
+$f:I\to J\text{ continuous and bijective}
+\Rightarrow f^{-1}:J\to I\text{ continuous}$ \\
+
+Extremum condition &
+$x_0\text{ interior local extremum}+
+f\text{ differentiable at }x_0
+\Rightarrow f'(x_0)=0$ \\
+
+First derivative test &
+$f':-\to+ \Rightarrow x_0\text{ local minimum}$,
+\qquad
+$f':+\to- \Rightarrow x_0\text{ local maximum}$ \\
+
+Second derivative test &
+$f'(x_0)=0,\ f''(x_0)>0 \Rightarrow x_0\text{ local minimum}$,
+\quad
+$f'(x_0)=0,\ f''(x_0)<0 \Rightarrow x_0\text{ local maximum}$ \\
+
+Convexity &
+$f''\ge0 \Rightarrow f'\text{ increasing}\Rightarrow f\text{ convex}$,
+\qquad
+$f''\le0 \Rightarrow f\text{ concave}$ \\
+
+Convex minimum &
+$f\text{ convex},\ f'(x_0)=0
+\Rightarrow x_0\text{ global minimum}$ \\
+
+Continuous compact &
+$f\in C([a,b])
+\Rightarrow f\text{ bounded and attains }\min,\max$ \\
+
+Intermediate value &
+$f\in C([a,b]),\ f(a)f(b)<0
+\Rightarrow \exists c\in(a,b):f(c)=0$ \\
+
+Unique root &
+$\text{continuity}+\text{sign change}+\text{strict monotonicity}
+\Rightarrow \exists!c:f(c)=0$ \\
+
+Sequential continuity &
+$f\text{ continuous at }x_0
+\Longleftrightarrow
+\bigl(x_n\to x_0\Rightarrow f(x_n)\to f(x_0)\bigr)$ \\
+
+Sequence convergence &
+$a_n\to L
+\Rightarrow (a_n)\text{ bounded}$ \\
+
+Subsequences &
+$a_n\to L
+\Rightarrow a_{n_k}\to L
+\text{ for every subsequence}$ \\
+
+Divergence via subsequences &
+$a_{n_k}\to A,\ a_{m_k}\to B,\ A\neq B
+\Rightarrow (a_n)\text{ diverges}$ \\
+
+Accumulation point &
+$A\text{ accumulation point}
+\Longleftrightarrow
+\exists(a_{n_k}):a_{n_k}\to A$ \\
+
+Bolzano--Weierstrass &
+$(a_n)\text{ bounded}
+\Rightarrow \exists\text{ convergent subsequence}$ \\
+
+Monotone convergence &
+$\text{monotone}+\text{bounded}
+\Rightarrow \text{convergent}$ \\
+
+Increasing sequence &
+$a_n\uparrow,\ (a_n)\text{ bounded above}
+\Rightarrow a_n\to\sup\{a_n:n\in\mathbb N\}$ \\
+
+Decreasing sequence &
+$a_n\downarrow,\ (a_n)\text{ bounded below}
+\Rightarrow a_n\to\inf\{a_n:n\in\mathbb N\}$ \\
+
+Cauchy &
+$\text{in }\mathbb R:\quad
+(a_n)\text{ convergent}
+\Longleftrightarrow
+(a_n)\text{ Cauchy}
+\Rightarrow
+(a_n)\text{ bounded}$ \\
+
+Order and limits &
+$a_n\le b_n\text{ eventually},\
+a_n\to A,\ b_n\to B
+\Rightarrow A\le B$ \\
+
+Sandwich theorem &
+$a_n\le b_n\le c_n,\ a_n\to L,\ c_n\to L
+\Rightarrow b_n\to L$ \\
+
+Useful squeeze form &
+$|b_n|\le c_n,\ c_n\to0
+\Rightarrow b_n\to0$ \\
+
+Limsup/liminf &
+$(a_n)\text{ bounded}:\quad
+a_n\text{ converges}
+\Longleftrightarrow
+\liminf a_n=\limsup a_n$ \\
+
+% \bottomrule
+% \end{tabular}
+% % \end{minipage}
+% % \hfill
+% % \begin{minipage}[t]{0.495\textwidth}
+% \begin{tabular}{@{}>{\bfseries}p{2.9cm} p{8.2cm}@{}}
+% \toprule
+
+Series term test &
+$\sum a_n\text{ converges}
+\Rightarrow a_n\to0$ \\
+
+Series divergence &
+$a_n\not\to0
+\Rightarrow \sum a_n\text{ diverges}$ \\
+
+Absolute convergence &
+$\sum |a_n|\text{ converges}
+\Rightarrow
+\sum a_n\text{ converges}
+\Rightarrow
+a_n\to0$ \\
+
+Comparison test &
+$0\le b_n\le a_n,\ \sum a_n\text{ converges}
+\Rightarrow \sum b_n\text{ converges}$ \\
+
+Divergence comparison &
+$0\le b_n\le a_n,\ \sum b_n\text{ diverges}
+\Rightarrow \sum a_n\text{ diverges}$ \\
+
+Ratio test &
+$\lim\left|\frac{a_{n+1}}{a_n}\right|<1
+\Rightarrow \sum a_n\text{ absolutely convergent}$,
+\quad
+$>1\Rightarrow\text{divergent}$ \\
+
+Root test &
+$\limsup |a_n|^{1/n}<1
+\Rightarrow \sum a_n\text{ absolutely convergent}$,
+\quad
+$>1\Rightarrow\text{divergent}$ \\
+
+Power series &
+$|x-a|<R\Rightarrow\text{absolute convergence}$,
+\quad
+$|x-a|>R\Rightarrow\text{divergence}$,
+\quad
+$|x-a|=R\Rightarrow\text{check separately}$ \\
+
+Inside radius &
+$|x-a|<R
+\Rightarrow \text{termwise differentiation/integration}
+\Rightarrow C^\infty$ \\
+
+Riemann integrability &
+$f\text{ continuous on }[a,b]
+\Rightarrow f\text{ Riemann integrable}
+\Rightarrow f\text{ bounded}$ \\
+
+Monotone integrability &
+$f\text{ monotone on }[a,b]
+\Rightarrow f\text{ Riemann integrable}$ \\
+
+Integral order &
+$f\le g
+\Rightarrow
+\int_a^b f(x)\,dx
+\le
+\int_a^b g(x)\,dx$ \\
+
+Integral bound &
+$|f|\le M
+\Rightarrow
+\left|\int_a^b f(x)\,dx\right|
+\le M|b-a|$ \\
+
+Antiderivatives &
+$F'=f,\ G'=f
+\Rightarrow F-G=C$ \\
+
+FTC I &
+$f\in C([a,b]),\
+F(x)=\int_a^x f(t)\,dt
+\Rightarrow F'=f$ \\
+
+FTC II &
+$F'=f
+\Rightarrow
+\int_a^b f(x)\,dx=F(b)-F(a)$ \\
+
+Uniform convergence &
+$f_n\xrightarrow{\mathrm{unif}}f
+\Rightarrow
+f_n\xrightarrow{\mathrm{pointwise}}f$ \\
+
+Uniform + continuity &
+$f_n\text{ continuous},\
+f_n\xrightarrow{\mathrm{unif}}f
+\Rightarrow f\text{ continuous}$ \\
+
+Uniform + integration &
+$f_n\text{ integrable},\
+f_n\xrightarrow{\mathrm{unif}}f
+\Rightarrow
+\displaystyle
+\lim_{n\to\infty}\int_a^b f_n
+=
+\int_a^b f$ \\
+
+\midrule
+
+False converse &
+$\text{continuous}\not\Rightarrow\text{differentiable}\ (|x|)$ \\
+
+False converse &
+$\text{bounded sequence}\not\Rightarrow\text{convergent}\ ((-1)^n)$ \\
+
+False converse &
+$a_n\to0\not\Rightarrow\sum a_n\text{ convergent}\ 
+\left(\sum\frac1n\right)$ \\
+
+False converse &
+$f'(x_0)=0\not\Rightarrow x_0\text{ extremum}\ (x^3)$ \\
+
+False converse &
+$f\text{ strictly increasing}\not\Rightarrow f'>0\ (x^3)$ \\
+
+False converse &
+$\text{pointwise}\not\Rightarrow\text{uniform}$ \\
+
+False converse &
+$\text{Riemann integrable}\not\Rightarrow\text{continuous}$ \\
+
+False converse &
+$\text{convergent series}\not\Rightarrow
+\text{absolutely convergent}$ \\
+
+\bottomrule
+\end{tabular}
+% \end{minipage}
+}
