@@ -11,9 +11,10 @@
 \usepackage{hyperref}
 \usepackage{array}
 \usepackage{svg}
-\usepackage{algpseudocode}
+\usepackage{algpseudocode}  
 \usepackage{tikz}
-\usetikzlibrary{matrix}
+\usepackage{graphicx}
+\usetikzlibrary{matrix,positioning,calc,arrows}
 \usepackage{forest}
 \usepackage[stretch=10,shrink=20]{microtype}
 \usepackage{anyfontsize}
@@ -166,7 +167,7 @@
 \begin{document}
 % \setcounter{section}{1}
 \begin{multicols}{3}
-    % {\fontsize{7}{7}\selectfont
+    {\fontsize{7}{7}\selectfont
     \section{Fundamentals: Logic, sets, numbers and vectors}
     \input{1.1-FieldOfRealNumbers}
     \input{1.2-VectorsVectorSpaces}
@@ -185,10 +186,11 @@
     \section{Differential equations - 2}
     \input{8-DifferentialEquations-2}
 
-    % }
+    }
 \end{multicols}
 \newpage
 \input{additional.tex}
 \newpage
 \input{implications}
+\input{implications2}
 \end{document}

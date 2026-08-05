@@ -1,0 +1,476 @@
+{\scriptsize
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{2pt}
+
+\noindent
+% ============================================================
+% LEFT MINIPAGE
+% ============================================================
+\begin{minipage}[t]{0.495\textwidth}
+\vspace{0pt}
+
+\textbf{\large Essential Proofs II}\par
+\vspace{2pt}
+
+\begin{tabular}{
+    @{}
+    >{\bfseries\raggedright\arraybackslash}p{2.9cm}
+    >{\raggedright\arraybackslash}p{10.5cm}
+    @{}
+}
+\toprule
+
+% ...
+
+Bolzano--Weierstrass on $[a,b]$ &
+A sequence $(x_n)\subseteq[a,b]$ is bounded. By Bolzano--Weierstrass,
+it has a convergent subsequence
+$
+x_{n_k}\to x_0.
+$
+Since
+$
+a\le x_{n_k}\le b
+$
+for all $k$, order preservation under limits yields
+$
+a\le x_0\le b.
+$
+Thus $x_0\in[a,b]$.
+\\
+
+\midrule
+
+Continuous on compact $\Rightarrow$ uniformly continuous &
+Assume not. Then some $\varepsilon_0>0$ and sequences
+$x_n,y_n\in[a,b]$ satisfy
+$
+|x_n-y_n|<1/n
+$
+but
+$
+|f(x_n)-f(y_n)|\ge\varepsilon_0.
+$
+Choose a subsequence $x_{n_k}\to x^*\in[a,b]$. Since
+$
+|x_{n_k}-y_{n_k}|\to0,
+$
+also $y_{n_k}\to x^*$. Continuity gives
+$
+f(x_{n_k}),f(y_{n_k})\to f(x^*),
+$
+hence
+$
+|f(x_{n_k})-f(y_{n_k})|\to0,
+$
+a contradiction.
+\\
+
+\midrule
+
+Intermediate value theorem &
+Assume $f(a)\le c\le f(b)$ and set
+$
+X:=\{x\in[a,b]\mid f(x)\le c\},
+\qquad
+x^*:=\sup X.
+$
+Choose $x_n\in X$ with $x_n\to x^*$; continuity gives
+$
+f(x^*)\le c.
+$
+If $f(x^*)<c$, continuity yields $\delta>0$ such that
+$
+f(y)<c
+$
+for $|y-x^*|<\delta$, producing $y>x^*$ in $X$, contradicting the
+definition of $x^*$. Hence
+$
+f(x^*)=c.
+$
+\\
+
+\midrule
+
+Cauchy criterion for series &
+Let
+$
+s_n:=\sum_{k=0}^{n}a_k.
+$
+Then
+$
+\sum_{k=0}^{\infty}a_k
+$
+converges iff $(s_n)$ converges, iff $(s_n)$ is Cauchy. Since
+$
+s_n-s_m=\sum_{k=m+1}^{n}a_k,
+$
+this is equivalent to
+$
+\forall\varepsilon>0\ \exists N\
+\forall n\ge m\ge N:
+\left|\sum_{k=m+1}^{n}a_k\right|<\varepsilon.
+$
+\\
+
+\midrule
+
+Absolute convergence $\Rightarrow$ convergence &
+Assume
+$
+\sum |a_n|
+$
+converges. By the Cauchy criterion, for large $n\ge m$,
+$
+\sum_{k=m+1}^{n}|a_k|<\varepsilon.
+$
+Therefore
+$
+\left|\sum_{k=m+1}^{n}a_k\right|
+\le
+\sum_{k=m+1}^{n}|a_k|
+<\varepsilon.
+$
+Thus $\sum a_n$ is Cauchy and converges. Moreover,
+$
+\left|\sum_{k=0}^{n}a_k\right|
+\le
+\sum_{k=0}^{n}|a_k|;
+$
+passing to the limit gives
+$
+\left|\sum a_k\right|\le\sum|a_k|.
+$
+\\
+
+\midrule
+
+Leibniz criterion &
+Let
+$
+s_n:=\sum_{k=0}^{n}(-1)^ka_k
+$
+with $a_n\downarrow0$. Then
+$
+s_{2n+2}-s_{2n}=-a_{2n+1}+a_{2n+2}\le0,
+$
+so $(s_{2n})$ decreases, while
+$
+s_{2n+3}-s_{2n+1}=a_{2n+2}-a_{2n+3}\ge0,
+$
+so $(s_{2n+1})$ increases. Also
+$
+s_{2n+1}\le s_{2n}
+$
+and
+$
+s_{2n}-s_{2n+1}=a_{2n+1}\to0.
+$
+Thus both subsequences converge to the same limit, hence $(s_n)$ converges.
+\\
+
+\midrule
+
+Rearrangement of an absolutely convergent series &
+Let $\varphi:\mathbb N_0\to\mathbb N_0$ be bijective and
+$
+\sum|a_n|<\infty.
+$
+Given $\varepsilon>0$, choose $N$ such that
+$
+\sum_{n>N}|a_n|<\varepsilon.
+$
+Choose $M$ so that
+$
+\{0,\ldots,N\}
+\subseteq
+\{\varphi(0),\ldots,\varphi(M)\}.
+$
+For $m\ge M$, the difference between
+$
+\sum_{k=0}^{m}a_{\varphi(k)}
+$
+and
+$
+\sum_{n=0}^{\infty}a_n
+$
+contains only terms with index $>N$, so its absolute value is
+$<\varepsilon$. Hence the rearranged series has the same sum; applying
+the same argument to $|a_n|$ gives absolute convergence.
+\\
+
+\midrule
+
+\\
+\textbf{\large Solutions I}\par
+\\
+\midrule
+
+Affine supremum &
+Let $S\neq\varnothing$ be bounded above, $a>0$, and
+$M:=\sup S$. For every $x\in S$,
+$
+x\le M\Rightarrow ax+b\le aM+b,
+$
+so $aM+b$ is an upper bound of
+$
+aS+b:=\{ax+b:x\in S\}.
+$
+Conversely, let
+$
+P:=\sup(aS+b).
+$
+Then for every $x\in S$,
+$
+ax+b\le P\Rightarrow x\le(P-b)/a.
+$
+Thus $(P-b)/a$ is an upper bound of $S$, hence
+$
+M\le(P-b)/a
+\Rightarrow aM+b\le P.
+$
+Together with $P\le aM+b$,
+$
+\boxed{\sup_{x\in S}(ax+b)=a\sup_{x\in S}x+b}.
+$
+\\
+
+\midrule
+
+Viewing-angle maximum &
+For heights $92$ and $46$ and distance $x>0$,
+$
+\vartheta(x)
+=
+\arctan\!\left(\frac{92}{x}\right)
+-
+\arctan\!\left(\frac{46}{x}\right).
+$
+Since
+$
+\vartheta(x)\to0
+$
+for $x\to0^+$ and $x\to\infty$, an interior critical point gives the
+global maximum. Moreover,
+$
+\vartheta'(x)
+=
+-\frac{92}{x^2+92^2}
++
+\frac{46}{x^2+46^2}.
+$
+Thus
+$
+\vartheta'(x)=0
+\Longleftrightarrow
+\frac{46}{x^2+46^2}
+=
+\frac{92}{x^2+92^2}
+\Longleftrightarrow
+x^2=2\cdot46^2.
+$
+Hence
+$
+\boxed{x=46\sqrt2\approx65.05}.
+$
+\\
+
+\midrule
+
+$x\sin(1/x)$ at $0$ &
+Let
+$
+f(x)=x\sin(1/x)
+$
+for $x\neq0$ and $f(0)=0$. The difference quotient is
+$
+\frac{f(h)-f(0)}{h}
+=
+\sin(1/h).
+$
+Choose
+$
+h_n=\frac{2}{\pi n}\to0.
+$
+Then
+$
+\sin(1/h_n)=\sin(\pi n/2)
+$
+does not converge. Therefore
+$
+\boxed{f\text{ is not differentiable at }0}.
+$
+Nevertheless,
+$
+|f(x)|\le|x|\to0,
+$
+so $f$ is continuous at $0$.
+\\
+
+\midrule
+
+$x^2\sin(1/x)$ at $0$ &
+Let
+$
+f(x)=x^2\sin(1/x)
+$
+for $x\neq0$ and $f(0)=0$. Then
+$
+\frac{f(h)-f(0)}{h}
+=
+h\sin(1/h).
+$
+Since
+$
+|h\sin(1/h)|\le|h|\to0,
+$
+the squeeze theorem gives
+$
+\boxed{f'(0)=0}.
+$
+\\
+
+\midrule
+
+Piecewise exponential: corner &
+Let
+$
+g(x)=
+\begin{cases}
+e^{-x},&x>0,\\
+1,&x\le0.
+\end{cases}
+$
+Then $g$ is continuous at $0$, but
+$
+g'_+(0)
+=
+\lim_{h\to0^+}\frac{e^{-h}-1}{h}
+=-1,
+\qquad
+g'_-(0)
+=
+\lim_{h\to0^-}\frac{1-1}{h}
+=0.
+$
+Since the one-sided derivatives differ,
+$
+\boxed{g\text{ is not differentiable at }0}.
+$
+\\
+
+Cube root: vertical tangent &
+For
+$
+f(x)=\sqrt[3]{x},
+$
+$
+\frac{f(x)-f(0)}{x}
+=
+\frac{x^{1/3}}{x}
+=
+x^{-2/3}\to+\infty
+\qquad(x\to0).
+$
+Hence no finite derivative exists:
+$
+\boxed{f\text{ is not differentiable at }0}.
+$
+Geometrically, the graph has a vertical tangent there.
+\\
+
+\midrule
+
+Oscillating tangent slopes &
+Let
+$
+h(x)=
+\begin{cases}
+x\sin(1/x),&x\neq0,\\
+0,&x=0.
+\end{cases}
+$
+Then
+$
+|h(x)-h(0)|
+=
+|x\sin(1/x)|
+\le|x|\to0,
+$
+so $h$ is continuous at $0$. But
+$
+\frac{h(x)-h(0)}{x}
+=
+\sin(1/x),
+$
+which has no limit as $x\to0$. Thus
+$
+\boxed{h\text{ is continuous but not differentiable at }0}.
+$
+\\
+
+\midrule
+
+Rational--irrational function &
+Let
+$
+f(x)=
+\begin{cases}
+x,&x\in\mathbb Q,\\
+0,&x\notin\mathbb Q.
+\end{cases}
+$
+At $0$,
+$
+|f(x)-f(0)|=|f(x)|\le|x|\to0,
+$
+so $f$ is continuous. Let $x_0\neq0$. Choose rational
+$
+r_n\to x_0
+$
+and irrational
+$
+s_n\to x_0.
+$
+Then
+$
+f(r_n)=r_n\to x_0,
+\qquad
+f(s_n)=0\to0.
+$
+The two limits differ, so
+$
+\boxed{f\text{ is continuous exactly at }x=0}.
+$
+
+\\
+
+\bottomrule
+\end{tabular}
+
+\end{minipage}
+\hfill
+% ============================================================
+% RIGHT MINIPAGE
+% ============================================================
+\begin{minipage}[t]{0.495\textwidth}
+\vspace{0pt}
+
+\textbf{\large Solutions II}\par
+\vspace{2pt}
+
+\begin{tabular}{
+    @{}
+    >{\bfseries\raggedright\arraybackslash}p{3.0cm}
+    >{\raggedright\arraybackslash}p{10.4cm}
+    @{}
+}
+\toprule
+
+% ...
+
+\bottomrule
+\end{tabular}
+
+\end{minipage}
+}

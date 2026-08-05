@@ -95,63 +95,137 @@ a_0
 }
 \\
 \tsThe{Solution of Linear Homogeneous Differential Equations}{
-Consider the linear homogeneous differential equation with constant coefficients
-\(
-a_n u^{(n)}(x) + a_{n-1}u^{(n-1)}(x) + \cdots + a_1u'(x) + a_0u(x) = 0,
-\ a_i \in \mathbb{R}.
-\)
-Its characteristic polynomial is
-\(
-a_n\lambda^n + a_{n-1}\lambda^{n-1} + \cdots + a_1\lambda + a_0 = 0.
-\)
-If all roots \(\lambda_i\) are real and have multiplicities \(m_i\), then the general solution is
+% Consider the linear homogeneous differential equation with constant coefficients
+% \(
+% a_n u^{(n)}(x) + a_{n-1}u^{(n-1)}(x) + \cdots + a_1u'(x) + a_0u(x) = 0,
+% \ a_i \in \mathbb{R}.
+% \)
+% Its characteristic polynomial is
+% \(
+% a_n\lambda^n + a_{n-1}\lambda^{n-1} + \cdots + a_1\lambda + a_0 = 0.
+% \)
+% If all roots \(\lambda_i\) are real and have multiplicities \(m_i\), then the general solution is
+% \[
+% u(x)
+% =
+% \sum_{i=1}^{r}
+% \left(
+% \sum_{p=0}^{m_i-1}
+% C_{ip} x^p e^{\lambda_i x}
+% \right).
+% \]
+% If, in addition, there are complex conjugate roots
+% \(
+% \alpha_j \pm i\beta_j
+% \)
+% with multiplicities \(m_j\), then the corresponding real-valued part of the solution is
+% \[
+% \sum_{j=1}^{s}
+% \left(
+% \sum_{q=0}^{m_j-1}
+% x^q e^{\alpha_j x}
+% \left[
+% A_{jq}\cos(\beta_j x)
+% +
+% B_{jq}\sin(\beta_j x)
+% \right]
+% \right).
+% \]
+% Therefore, in the general case, the solution is \\
+% \[
+% u(x)
+% =
+% \sum_{i=1}^{r}
+% \left(
+% \sum_{p=0}^{m_i-1}
+% C_{ip} x^p e^{\lambda_i x}
+% \right)
+% +
+% \sum_{j=1}^{s}
+% \left(
+% \sum_{q=0}^{m_j-1}
+% x^q e^{\alpha_j x}
+% \left[
+% A_{jq}\cos(\beta_j x)
+% +
+% B_{jq}\sin(\beta_j x)
+% \right]
+% \right).
+% \]
+Consider
 \[
-u(x)
-=
-\sum_{i=1}^{r}
-\left(
-\sum_{p=0}^{m_i-1}
-C_{ip} x^p e^{\lambda_i x}
-\right).
+a_nu^{(n)}+\cdots+a_1u'+a_0u=0.
 \]
-If, in addition, there are complex conjugate roots
-\(
-\alpha_j \pm i\beta_j
-\)
-with multiplicities \(m_j\), then the corresponding real-valued part of the solution is
+\textbf{Step 1: Characteristic equation}
 \[
-\sum_{j=1}^{s}
-\left(
-\sum_{q=0}^{m_j-1}
-x^q e^{\alpha_j x}
-\left[
-A_{jq}\cos(\beta_j x)
-+
-B_{jq}\sin(\beta_j x)
-\right]
-\right).
+a_n\lambda^n+\cdots+a_1\lambda+a_0=0.
 \]
-Therefore, in the general case, the solution is \\
+\textbf{Step 2: Build one solution block for each root}
 \[
-u(x)
-=
-\sum_{i=1}^{r}
+\begin{array}{c|c}
+\text{Root of multiplicity }m & \text{Contribution to }u_h(x)\\
+\hline
+\lambda\in\mathbb R
+&
+e^{\lambda x}
 \left(
-\sum_{p=0}^{m_i-1}
-C_{ip} x^p e^{\lambda_i x}
+C_0+C_1x+\cdots+C_{m-1}x^{m-1}
 \right)
-+
-\sum_{j=1}^{s}
+\\[1mm]
+\alpha\pm i\beta
+&
+e^{\alpha x}
+\displaystyle\sum_{k=0}^{m-1}
+x^k
 \left(
-\sum_{q=0}^{m_j-1}
-x^q e^{\alpha_j x}
-\left[
-A_{jq}\cos(\beta_j x)
-+
-B_{jq}\sin(\beta_j x)
-\right]
-\right).
+A_k\cos(\beta x)+B_k\sin(\beta x)
+\right)
+\end{array}
 \]
+\textbf{Step 3: Add all blocks}
+\[
+u_h(x)=\text{sum of all root contributions}.
+\]
+\textbf{Memory rule:}
+\[
+\boxed{\text{multiplicity }m
+\Rightarrow
+1,x,\ldots,x^{m-1}}
+\]
+\[
+\boxed{
+\alpha\pm i\beta
+\Rightarrow
+e^{\alpha x}
+\bigl(
+\cos(\beta x),\sin(\beta x)
+\bigr)
+}
+\]
+}
+\tsIdea{Example: repeated real and complex roots}{
+Suppose
+\(
+(\lambda-2)^2(\lambda^2+4)=0.
+\)
+Roots:
+\(
+\lambda=2 \text{ with multiplicity }2,
+\
+\lambda=\pm2i.
+\)
+\\
+Hence
+\(
+u_h(x)
+=
+(C_1+C_2x)e^{2x}
++
+C_3\cos(2x)
++
+C_4\sin(2x)
+.
+\)
 }
 \tsIdea{Constants in the General Solution}{
 The general solution of a differential equation of order $n$ contains $n$ constants. Therefore, in order to determine a unique solution, one must specify $n$ additional conditions.

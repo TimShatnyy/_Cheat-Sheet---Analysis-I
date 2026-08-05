@@ -189,3 +189,128 @@ x\mapsto y(x),
 where the interval $I$ may depend on $x_0$ and the prescribed
 initial data.
 }
+\\
+
+% Preamble:
+% \usepackage{tikz}
+% \usetikzlibrary{arrows.meta,positioning,calc}
+
+\begin{center}
+\resizebox{0.35\textwidth}{!}{%
+\begin{tikzpicture}[
+    font=\fontsize{5}{5.3}\selectfont,
+    line width=0.25pt,
+    title/.style={align=center},
+    question/.style={align=center,text=red!70!black},
+    heading/.style={align=left,text=violet!65!black},
+    method/.style={align=left,text=blue!65!black},
+    body/.style={align=left}
+]
+
+\node[title] (title) at (0,0)
+    {\underline{\textbf{Wann welche Lösungstechnik?}}};
+
+\node[question] (order) at (0,-0.42)
+    {\textbf{Ordnung?}};
+
+% Left branch
+\node[heading,anchor=north west] (first) at (-5.7,-1.25)
+    {\textbf{1. Ordnung}};
+
+\draw[->]
+    (order.south west)
+    .. controls (-2.0,-0.65) and (-4.0,-0.85) ..
+    (first.north east);
+
+\node[body,anchor=north west,text width=5.2cm]
+    at (-5.7,-1.55)
+{
+\textbf{Form } $y'=f(y)g(x)$?
+
+{\color{blue!65!black}
+$\rightarrow$ Variablentrennung}
+
+\vspace{0.4mm}
+
+\textbf{Form } $y'=f(ax+by+c)$?
+
+{\color{blue!65!black}
+$\rightarrow$ Substitution $u=ax+by+c$}
+
+\vspace{0.4mm}
+
+\textbf{Homogen in $x,y$?}
+
+{\color{blue!65!black}
+$\rightarrow$ $u=\frac{y}{x}$, $y=ux$}
+
+\vspace{0.4mm}
+
+\textbf{Linear inhomogen?}
+
+{\color{blue!65!black}
+$\rightarrow$ Variation der Konstanten}
+};
+
+% Right branch
+\node[heading,anchor=north east] (higher) at (5.7,-1.25)
+    {\textbf{Höhere Ordnung}};
+
+\draw[->]
+    (order.south east)
+    .. controls (2.0,-0.65) and (4.0,-0.85) ..
+    (higher.north west);
+
+\node[question] (inhom) at (3.0,-1.95)
+    {\textbf{Inhomogen?}};
+
+\draw (higher.south) -- (inhom.north);
+
+\node[heading] (homogeneous) at (1.2,-2.7)
+    {\textbf{homogen}};
+
+\draw[->]
+    (inhom.south west)
+    .. controls (2.2,-2.25) and (1.6,-2.4) ..
+    (homogeneous.north);
+
+\node[method,anchor=north west,text width=3.8cm]
+    at (-0.15,-3.0)
+{
+$\rightarrow$ Eulerscher Ansatz
+
+\hspace{2mm}charakt. Gleichung
+
+\hspace{2mm}Fundamentallösungen
+
+{\color{green!55!black}
+Anzahl = Ordnung}
+};
+
+\node[heading] (inhomogeneous) at (4.35,-2.7)
+    {\textbf{inhomogen}};
+
+\draw[->]
+    (inhom.south east)
+    .. controls (3.7,-2.25) and (4.0,-2.4) ..
+    (inhomogeneous.north);
+
+\node[method,anchor=north west,text width=4.6cm]
+    at (2.7,-3.0)
+{
+$\rightarrow$ $1.$ homogene Lösung $y_h$
+
+{\color{green!55!black}
+\hspace{2mm}Eulerscher Ansatz}
+
+$\rightarrow$ $2.$ partikuläre Lösung $y_p$
+
+{\color{green!55!black}
+\hspace{2mm}passender Ansatz}
+
+$\rightarrow$ $3.$ $y=y_h+y_p$
+};
+
+\end{tikzpicture}%
+}
+\end{center}

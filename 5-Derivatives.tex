@@ -47,6 +47,71 @@
               \)
     \end{itemize}
 }
+\tsIdea{Continuity / Differentiability at $x_0$}{
+    \textbf{Continuity:}
+    \[
+    \lim_{x\to x_0}f(x)=f(x_0)
+    \Rightarrow
+    f\in C(x_0).
+    \]
+
+    % \[
+    % \tsPoint
+    % \]
+
+    $\tsPoint$ \textbf{Differentiability:}
+    \[
+    \lim_{h\to0}
+    \frac{f(x_0+h)-f(x_0)}{h}
+    =L\in\mathbb R
+    \Rightarrow
+    f'(x_0)=L.
+    \]
+
+    % \[
+    % \tsPoint
+    % \]
+
+    \[
+    f\text{ differentiable at }x_0
+    \Rightarrow
+    f\text{ continuous at }x_0.
+    \]
+
+    \(\tsPoint\)\textbf{Mini example:} Let
+    \[
+    f(x)=
+    \begin{cases}
+        x^2\sin\!\left(\frac1x\right), & x\neq0,\\
+        0, & x=0.
+    \end{cases}
+    \]
+
+    \textbf{Continuity at $0$:}
+    \[
+    |f(x)|
+    =
+    \left|x^2\sin\!\left(\frac1x\right)\right|
+    \le x^2\to0=f(0).
+    \]
+
+    \textbf{Differentiability at $0$:}
+    \[
+    f'(0)
+    =
+    \lim_{h\to0}
+    \frac{f(h)-f(0)}{h}
+    =
+    \lim_{h\to0}
+    h\sin\!\left(\frac1h\right)
+    =0.
+    \]
+
+    Thus $f$ is continuous and differentiable at $0$, with
+    \[
+    \boxed{f'(0)=0}.
+    \]
+}
 \tsDef{Higher Derivatives}{
     Define iteratively:
     \[

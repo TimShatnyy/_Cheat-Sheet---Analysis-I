@@ -1,11 +1,25 @@
-\section*{Essential Implications}
+% \section*{Essential Implications and Proofs}
 
 {\scriptsize
-\renewcommand{\arraystretch}{1.15}
+\renewcommand{\arraystretch}{1}
 \setlength{\tabcolsep}{2pt}
 
-% \begin{minipage}[t]{0.495\textwidth}
-\begin{tabular}{@{}>{\bfseries}p{2.9cm} p{8.2cm}@{}}
+\noindent
+% ============================================================
+% LEFT MINIPAGE
+% ============================================================
+\begin{minipage}[t]{0.495\textwidth}
+\vspace{0pt}
+
+\textbf{\large Essential Implications}\par
+\vspace{2pt}
+
+\begin{tabular}{
+    @{}
+    >{\bfseries\raggedright\arraybackslash}p{2.9cm}
+    >{\raggedright\arraybackslash}p{10.5cm}
+    @{}
+}
 \toprule
 
 Regularity &
@@ -148,12 +162,6 @@ a_n\text{ converges}
 \liminf a_n=\limsup a_n$ \\
 
 % \bottomrule
-% \end{tabular}
-% % \end{minipage}
-% % \hfill
-% % \begin{minipage}[t]{0.495\textwidth}
-% \begin{tabular}{@{}>{\bfseries}p{2.9cm} p{8.2cm}@{}}
-% \toprule
 
 Series term test &
 $\sum a_n\text{ converges}
@@ -285,7 +293,434 @@ False converse &
 $\text{convergent series}\not\Rightarrow
 \text{absolutely convergent}$ \\
 
+Regularity &
+$C^\infty\Rightarrow C^n\Rightarrow C^1
+\Rightarrow\text{differentiable}
+\Rightarrow\text{continuous}$ \\
+
+% Paste all remaining implication rows here.
+
+\bottomrule
+
+\addlinespace[2mm]
+
+\bottomrule
+
+Continuity of composition (proof) &
+Let $f$ be continuous at $x_0$ and $g$ continuous at $f(x_0)$. Given
+$\varepsilon>0$, choose $\eta>0$ such that
+$
+|y-f(x_0)|<\eta
+\Rightarrow
+|g(y)-g(f(x_0))|<\varepsilon.
+$
+Choose $\delta>0$ such that
+$
+|x-x_0|<\delta
+\Rightarrow
+|f(x)-f(x_0)|<\eta.
+$
+Then
+$
+|x-x_0|<\delta
+\Rightarrow
+|g(f(x))-g(f(x_0))|<\varepsilon.
+$
+\\
 \bottomrule
 \end{tabular}
-% \end{minipage}
+
+\end{minipage}
+\hfill
+% ============================================================
+% RIGHT MINIPAGE
+% ============================================================
+\begin{minipage}[t]{0.495\textwidth}
+\vspace{0pt}
+
+\textbf{\large Essential Proofs I}\par
+\vspace{2pt}
+
+\begin{tabular}{
+    @{}
+    >{\bfseries\raggedright\arraybackslash}p{3.0cm}
+    >{\raggedright\arraybackslash}p{10.4cm}
+    @{}
+}
+\toprule
+
+Uniqueness of the limit &
+Assume $a_n\to A$ and $a_n\to B$. For arbitrary $\varepsilon>0$, choose
+$N_A,N_B$ such that
+$n\ge N_A\Rightarrow |a_n-A|<\varepsilon/2$ and
+$n\ge N_B\Rightarrow |a_n-B|<\varepsilon/2$.
+For $n\ge N:=\max\{N_A,N_B\}$,
+$
+|A-B|
+\le |A-a_n|+|a_n-B|
+<\varepsilon.
+$
+Since this holds for every $\varepsilon>0$, $|A-B|=0$, hence $A=B$.
+\\
+
+\midrule
+
+Subsequences preserve limits &
+Assume $a_n\to L$ and let $(a_{n_k})$ be a subsequence. For arbitrary
+$\varepsilon>0$, choose $N$ such that
+$
+n\ge N\Rightarrow |a_n-L|<\varepsilon.
+$
+Since $(n_k)$ is strictly increasing, $n_k\ge k$. Thus, for $k\ge N$,
+$
+n_k\ge k\ge N
+\Rightarrow
+|a_{n_k}-L|<\varepsilon.
+$
+Therefore $a_{n_k}\to L$.
+\\
+
+\midrule
+
+Accumulation point gives infinitely many terms &
+Let $A$ be an accumulation point. Then there exists a subsequence
+$a_{n_k}\to A$. For arbitrary $\varepsilon>0$, choose $K$ such that
+$
+k\ge K\Rightarrow |a_{n_k}-A|<\varepsilon.
+$
+Hence
+$
+a_{n_k}\in(A-\varepsilon,A+\varepsilon)
+$
+for every $k\ge K$. Since the indices $n_k$ are distinct and there are
+infinitely many $k\ge K$, the interval contains infinitely many sequence
+terms.
+\\
+
+\midrule
+
+Convergent sequences are bounded &
+Assume $a_n\to L$. Choose $N$ such that
+$
+n\ge N\Rightarrow |a_n-L|<1.
+$
+For $n\ge N$,
+$
+|a_n|
+\le |a_n-L|+|L|
+<1+|L|.
+$
+Define
+$
+M:=\max\{|a_0|,\ldots,|a_{N-1}|,1+|L|\}.
+$
+Then $|a_n|\le M$ for every $n\in\mathbb N_0$; hence $(a_n)$ is bounded.
+\\
+
+\midrule
+
+Sandwich theorem &
+Assume $a_n\to L$, $c_n\to L$, and
+$a_n\le b_n\le c_n$ for all $n\ge N_0$.
+For arbitrary $\varepsilon>0$, choose $N_1,N_2$ such that
+$
+n\ge N_1\Rightarrow L-\varepsilon<a_n<L+\varepsilon
+$
+and
+$
+n\ge N_2\Rightarrow L-\varepsilon<c_n<L+\varepsilon.
+$
+For
+$
+n\ge N:=\max\{N_0,N_1,N_2\},
+$
+$
+L-\varepsilon<a_n\le b_n\le c_n<L+\varepsilon.
+$
+Thus $|b_n-L|<\varepsilon$, so $b_n\to L$.
+\\
+
+\midrule
+
+Useful squeeze form &
+If $|b_n|\le c_n$ eventually and $c_n\to0$, then
+$
+-c_n\le b_n\le c_n.
+$
+Since $-c_n\to0$ and $c_n\to0$, the sandwich theorem gives $b_n\to0$.
+\\
+
+\midrule
+
+Order preservation under limits &
+Assume $a_n\le b_n$ eventually, $a_n\to A$, and $b_n\to B$.
+Suppose $A>B$ and set $\varepsilon:=(A-B)/3>0$.
+Eventually,
+$
+a_n>A-\varepsilon
+$
+and
+$
+b_n<B+\varepsilon.
+$
+But
+$
+A-\varepsilon>B+\varepsilon,
+$
+so eventually $a_n>b_n$, contradicting $a_n\le b_n$. Hence $A\le B$.
+\\
+
+\midrule
+
+Unique accumulation point of a convergent sequence &
+If $a_n\to L$, every convergent subsequence also converges to $L$.
+Since every accumulation point is the limit of some subsequence, every
+accumulation point equals $L$. Moreover, $(a_n)$ itself converges to $L$,
+so $L$ is an accumulation point. Hence $L$ is the unique accumulation
+point.
+\\
+
+\midrule
+
+Nonnegative series &
+Let
+$
+s_n:=\sum_{k=0}^{n}a_k
+$
+with $a_k\ge0$. Then
+$
+s_{n+1}-s_n=a_{n+1}\ge0,
+$
+so $(s_n)$ is increasing. Hence
+$
+(s_n)\text{ bounded}
+\Rightarrow
+(s_n)\text{ convergent}
+\Rightarrow
+\sum_{n=0}^{\infty}a_n\text{ converges}.
+$
+If $(s_n)$ is unbounded, then the series diverges.
+\\
+
+\midrule
+
+Necessary condition for series convergence &
+Assume
+$
+\sum_{n=0}^{\infty}a_n
+$
+converges and let
+$
+s_n:=\sum_{k=0}^{n}a_k\to S.
+$
+Since
+$
+a_n=s_n-s_{n-1},
+$
+we obtain
+$
+\lim_{n\to\infty}a_n
+=
+\lim_{n\to\infty}s_n
+-
+\lim_{n\to\infty}s_{n-1}
+=
+S-S=0.
+$
+Thus
+$
+\sum a_n\text{ convergent}
+\Rightarrow
+a_n\to0.
+$
+\\
+
+\midrule
+
+Cauchy criterion: convergence $\Rightarrow$ Cauchy &
+Assume $a_n\to L$. For arbitrary $\varepsilon>0$, choose $N$ such that
+$
+n\ge N\Rightarrow |a_n-L|<\varepsilon/2.
+$
+Then for all $m,n\ge N$,
+$
+|a_n-a_m|
+\le
+|a_n-L|+|a_m-L|
+<
+\varepsilon.
+$
+Hence $(a_n)$ is Cauchy.
+\\
+
+\midrule
+
+Cauchy criterion: Cauchy $\Rightarrow$ convergence &
+Let $(a_n)$ be Cauchy. Then $(a_n)$ is bounded, so by
+Bolzano--Weierstrass there exists a subsequence
+$
+a_{n_k}\to L.
+$
+For $\varepsilon>0$, choose $N_1$ such that
+$
+m,n\ge N_1\Rightarrow |a_n-a_m|<\varepsilon/2,
+$
+and choose $K$ such that
+$
+k\ge K\Rightarrow |a_{n_k}-L|<\varepsilon/2.
+$
+Choose $k$ with
+$
+k\ge K
+$
+and
+$
+n_k\ge N_1.
+$
+Then for every $n\ge N_1$,
+$
+|a_n-L|
+\le
+|a_n-a_{n_k}|+|a_{n_k}-L|
+<
+\varepsilon.
+$
+Thus $a_n\to L$.
+\\
+
+\midrule
+
+Cauchy sequences are bounded &
+Let $(a_n)$ be Cauchy. Choose $N$ such that
+$
+m,n\ge N\Rightarrow |a_n-a_m|<1.
+$
+Fix $m=N$. Then for $n\ge N$,
+$
+|a_n|
+\le
+|a_n-a_N|+|a_N|
+<
+1+|a_N|.
+$
+Set
+$
+M:=\max\{|a_0|,\ldots,|a_{N-1}|,1+|a_N|\}.
+$
+Then
+$
+|a_n|\le M
+$
+for every $n$, so $(a_n)$ is bounded.
+\\
+
+\midrule
+
+Monotone sequence with bounded subsequence &
+Assume $(a_n)$ is increasing and has a bounded subsequence
+$
+|a_{n_k}|\le M.
+$
+For every $n$, choose $k$ with $n\le n_k$. By monotonicity,
+$
+a_n\le a_{n_k}\le M.
+$
+Thus $(a_n)$ is bounded above. Since it is increasing and bounded, it
+converges. The decreasing case is analogous.
+\\
+
+\midrule
+
+Differentiable $\Rightarrow$ continuous &
+Assume $f$ is differentiable at $x_0$. For $h\neq0$,
+$
+f(x_0+h)-f(x_0)
+=
+\frac{f(x_0+h)-f(x_0)}{h}\,h.
+$
+Hence
+$
+\lim_{h\to0}\bigl(f(x_0+h)-f(x_0)\bigr)
+=
+f'(x_0)\cdot0=0.
+$
+Thus
+$
+\lim_{x\to x_0}f(x)=f(x_0),
+$
+so $f$ is continuous at $x_0$.
+\\
+
+\midrule
+
+Rolle's theorem &
+Since $f\in C([a,b])$, it attains a minimum and maximum. If $f$ is
+constant, then $f'=0$ on $(a,b)$. Otherwise, because $f(a)=f(b)$, at
+least one extremum occurs at some $\xi\in(a,b)$. Since $f$ is
+differentiable there, Fermat's theorem gives
+$
+f'(\xi)=0.
+$
+\\
+
+\midrule
+
+Mean value theorem &
+Define
+$
+g(x):=f(x)-\frac{f(b)-f(a)}{b-a}(x-a).
+$
+Then $g$ is continuous on $[a,b]$, differentiable on $(a,b)$, and
+$
+g(a)=g(b)=f(a).
+$
+By Rolle, some $\xi\in(a,b)$ satisfies
+$
+0=g'(\xi)
+=
+f'(\xi)-\frac{f(b)-f(a)}{b-a}.
+$
+Hence
+$
+f'(\xi)=\frac{f(b)-f(a)}{b-a}.
+$
+\\
+
+\midrule
+
+Strict monotonicity $\Rightarrow$ injectivity &
+Let $x_1\neq x_2$; w.l.o.g. $x_1<x_2$. If $f$ is strictly increasing,
+then $f(x_1)<f(x_2)$; if strictly decreasing, then
+$f(x_1)>f(x_2)$. Thus $f(x_1)\neq f(x_2)$, so $f$ is injective.
+\\
+
+\midrule
+
+Algebra of continuous functions &
+Let $x_n\to x_0$. Continuity gives
+$
+f(x_n)\to f(x_0)
+$
+and
+$
+g(x_n)\to g(x_0).
+$
+By the limit laws,
+$
+f(x_n)\pm g(x_n)\to f(x_0)\pm g(x_0),
+$
+$
+f(x_n)g(x_n)\to f(x_0)g(x_0),
+$
+and, if $g(x_0)\neq0$,
+$
+f(x_n)/g(x_n)\to f(x_0)/g(x_0).
+$
+Hence the corresponding functions are continuous.
+\\
+
+\bottomrule
+\end{tabular}
+
+\end{minipage}
 }

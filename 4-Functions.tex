@@ -42,14 +42,14 @@
 \tsDef{Injective, Surjective, Bijective}{
     Let $f : X \to Y$.
     \begin{itemize}[noitemsep]
-        \item $f$ is \emph{injective} if
-              \(
+        \item $f$ is \emph{injective} if (different outputs for different inputs) \\
+              \[
                   f(x_1) = f(x_2) \Rightarrow x_1 = x_2.
-              \)
-        \item $f$ is \emph{surjective} if
-              \(
+              \]
+        \item $f$ is \emph{surjective} if  (every value in the codomain gets hit) \\
+              \[
                   \forall y \in Y \; \exists x \in X : f(x) = y.
-              \)
+              \]
         \item $f$ is \emph{bijective} if it is both injective and surjective.
     \end{itemize}
 }
@@ -234,12 +234,22 @@
               \)
     \end{itemize}
 }
+% \tsThe{Sequential Characterization of Continuity}{
+%     Let $f : D \subseteq \mathbb{R} \to \mathbb{R}$ and $x_0 \in D$.
+%     Then $f$ is continuous at $x_0$ if and only if for every sequence $(x_n)$ with $x_n \to x_0$ we have
+%     \(
+%         f(x_n) \to f(x_0).
+%     \)
+% }
 \tsThe{Sequential Characterization of Continuity}{
-    Let $f : D \subseteq \mathbb{R} \to \mathbb{R}$ and $x_0 \in D$.
-    Then $f$ is continuous at $x_0$ if and only if for every sequence $(x_n)$ with $x_n \to x_0$ we have
-    \(
-        f(x_n) \to f(x_0).
-    \)
+    Let \(f:D\subseteq\mathbb{R}\to\mathbb{R}\) and \(x_0\in D\).
+    Then \(f\) is continuous at \(x_0\) if and only if, for every sequence
+    \((x_n)_{n\in\mathbb N}\subseteq D\),
+    \[
+        \lim_{n\to\infty}x_n=x_0
+        \quad\Longrightarrow\quad
+        \lim_{n\to\infty}f(x_n)=f(x_0).
+    \]
 }
 \tsThe{Algebra of Continuous Functions}{
     Let $f,g : D \subseteq \mathbb{R} \to \mathbb{R}$ be continuous. Then:
