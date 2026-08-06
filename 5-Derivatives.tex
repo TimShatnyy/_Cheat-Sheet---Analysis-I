@@ -48,66 +48,116 @@
     \end{itemize}
 }
 \tsIdea{Continuity / Differentiability at $x_0$}{
-    \textbf{Continuity:}
     \[
-    \lim_{x\to x_0}f(x)=f(x_0)
-    \Rightarrow
-    f\in C(x_0).
-    \]
-
-    % \[
-    % \tsPoint
-    % \]
-
-    $\tsPoint$ \textbf{Differentiability:}
-    \[
-    \lim_{h\to0}
-    \frac{f(x_0+h)-f(x_0)}{h}
-    =L\in\mathbb R
-    \Rightarrow
-    f'(x_0)=L.
-    \]
-
-    % \[
-    % \tsPoint
-    % \]
-
-    \[
-    f\text{ differentiable at }x_0
-    \Rightarrow
-    f\text{ continuous at }x_0.
-    \]
-
-    \(\tsPoint\)\textbf{Mini example:} Let
-    \[
-    f(x)=
+    \boxed{
+    f \text{ continuous at } x_0
+    \iff
     \begin{cases}
-        x^2\sin\!\left(\frac1x\right), & x\neq0,\\
-        0, & x=0.
+    1.\; f(x_0)\text{ exists},\\
+    2.\; \displaystyle
+    \lim_{x\to x_0^-}f(x)
+    =
+    \lim_{x\to x_0^+}f(x),\\
+    3.\; \displaystyle
+    \lim_{x\to x_0}f(x)=f(x_0).
+    \end{cases}
+    }
+    \]
+    \(\tsPoint\) \textbf{Differentiability:}
+    \[
+    \boxed{
+    f \text{ differentiable at an interior point }x_0
+    \iff
+    f'_-(x_0)=f'_+(x_0)\in\mathbb R
+    }
+    \]
+    \[
+    f'_{\pm}(x_0)
+    :=
+    \lim_{h\to0^{\pm}}
+    \frac{f(x_0+h)-f(x_0)}{h}.
+    \]
+
+    \[
+    \begin{cases}
+    f'_-(x_0)=f'_+(x_0)\in\mathbb R
+    &\Rightarrow f'(x_0)\text{ exists},\\[1mm]
+    f'_-(x_0)\neq f'_+(x_0)
+    &\Rightarrow f'(x_0)\text{ does not exist},\\[1mm]
+    \text{only one one-sided derivative exists}
+    &\Rightarrow f'(x_0)\text{ does not exist}.
     \end{cases}
     \]
+    \[
+    \text{Example: }f(x)=|x|,
+    \qquad
+    f'_-(0)=-1\neq1=f'_+(0)
+    \Rightarrow f'(0)\text{ does not exist}.
+    \]
+    \[
+    \boxed{
+    \begin{aligned}
+    \operatorname{dom}(f)=[a,b]:\qquad
+    f'_+(a)
+    &=
+    \lim_{h\to0^+}
+    \frac{f(a+h)-f(a)}{h},\\
+    f'_-(b)
+    &=
+    \lim_{h\to0^-}
+    \frac{f(b+h)-f(b)}{h}.
+    \end{aligned}
+    }
+    \]
+    At an endpoint that belongs to the domain, differentiability is tested using the corresponding one-sided derivative.
 
+
+    \(\tsPoint\) \textbf{Mini example:} Let
+    \(
+    f(x)=
+    \begin{cases}
+        x^2\sin\!\left(\dfrac1x\right), & x\neq0,\\
+        0, & x=0.
+    \end{cases}
+    \)
+    \\
     \textbf{Continuity at $0$:}
     \[
     |f(x)|
     =
     \left|x^2\sin\!\left(\frac1x\right)\right|
-    \le x^2\to0=f(0).
+    \le x^2
+    \xrightarrow[x\to0]{}0=f(0).
     \]
-
+    Hence, by the squeeze theorem,
+    \(
+    \lim_{x\to0}f(x)=f(0)=0.
+    \)
+    \\
+    \\
     \textbf{Differentiability at $0$:}
     \[
+    \begin{aligned}
     f'(0)
+    &=
+    \lim_{h\to0}
+    \frac{f(0+h)-f(0)}{h}
     =
     \lim_{h\to0}
-    \frac{f(h)-f(0)}{h}
+    \frac{h^2\sin\!\left(\frac1h\right)}{h}
     =
     \lim_{h\to0}
     h\sin\!\left(\frac1h\right)
-    =0.
+    =0,
+    \end{aligned}
     \]
-
-    Thus $f$ is continuous and differentiable at $0$, with
+    since
+    \(
+    \left|h\sin\!\left(\frac1h\right)\right|
+    \le |h|
+    \xrightarrow[h\to0]{}0.
+    \)
+    Thus \(f\) is continuous and differentiable at \(0\), with
     \[
     \boxed{f'(0)=0}.
     \]
@@ -274,8 +324,8 @@
 \tsCor{Convexity via Second Derivative}{
     If $f$ is twice differentiable:
     \begin{itemize}[noitemsep]
-        \item \(f''(x) \ge 0 \iff f \text{ is convex}.\)
-        \item \(f''(x) \leq 0 \Longleftrightarrow f \text{ is concave}\)
+        \item \(f''(x) \ge 0 \iff f \text{ is convex (curved upward)}.\)
+        \item \(f''(x) \leq 0 \Longleftrightarrow f \text{ is concave (curved downward)}\)
     \end{itemize}
 }
 \tsThe{Second Derivative Test}{

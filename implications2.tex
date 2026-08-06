@@ -201,248 +201,171 @@ the same argument to $|a_n|$ gives absolute convergence.
 
 \midrule
 
-\\
+
 \textbf{\large Solutions I}\par
 \\
-\midrule
-
-Affine supremum &
-Let $S\neq\varnothing$ be bounded above, $a>0$, and
-$M:=\sup S$. For every $x\in S$,
-$
-x\le M\Rightarrow ax+b\le aM+b,
-$
-so $aM+b$ is an upper bound of
-$
-aS+b:=\{ax+b:x\in S\}.
-$
-Conversely, let
-$
-P:=\sup(aS+b).
-$
-Then for every $x\in S$,
-$
-ax+b\le P\Rightarrow x\le(P-b)/a.
-$
-Thus $(P-b)/a$ is an upper bound of $S$, hence
-$
-M\le(P-b)/a
-\Rightarrow aM+b\le P.
-$
-Together with $P\le aM+b$,
-$
-\boxed{\sup_{x\in S}(ax+b)=a\sup_{x\in S}x+b}.
-$
-\\
 
 \midrule
 
-Viewing-angle maximum &
-For heights $92$ and $46$ and distance $x>0$,
-$
-\vartheta(x)
-=
-\arctan\!\left(\frac{92}{x}\right)
--
-\arctan\!\left(\frac{46}{x}\right).
-$
-Since
-$
-\vartheta(x)\to0
-$
-for $x\to0^+$ and $x\to\infty$, an interior critical point gives the
-global maximum. Moreover,
-$
-\vartheta'(x)
-=
--\frac{92}{x^2+92^2}
-+
-\frac{46}{x^2+46^2}.
-$
+Taylor polynomial &
+Use
+$T_n f(x;x_0)=\sum_{k=0}^{n}
+\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k$.
+Here $x_0=-1$ and
+$f(-1)=f'(-1)=f'''(-1)=0$, $f''(-1)=2$.
 Thus
-$
-\vartheta'(x)=0
-\Longleftrightarrow
-\frac{46}{x^2+46^2}
-=
-\frac{92}{x^2+92^2}
-\Longleftrightarrow
-x^2=2\cdot46^2.
-$
+$T_2f(x;-1)=\frac{2}{2!}(x+1)^2=(x+1)^2$
+and
+$T_3f(x;-1)=(x+1)^2$.
 Hence
-$
-\boxed{x=46\sqrt2\approx65.05}.
-$
+$f(-0.99)\approx T_2f(-0.99;-1)=(0.01)^2=10^{-4}$.
 \\
 
 \midrule
 
 $x\sin(1/x)$ at $0$ &
-Let
-$
-f(x)=x\sin(1/x)
-$
-for $x\neq0$ and $f(0)=0$. The difference quotient is
-$
-\frac{f(h)-f(0)}{h}
-=
-\sin(1/h).
-$
-Choose
-$
-h_n=\frac{2}{\pi n}\to0.
-$
-Then
-$
-\sin(1/h_n)=\sin(\pi n/2)
-$
-does not converge. Therefore
-$
-\boxed{f\text{ is not differentiable at }0}.
-$
-Nevertheless,
-$
-|f(x)|\le|x|\to0,
-$
-so $f$ is continuous at $0$.
+Let $f(0)=0$ and $f(x)=x\sin(1/x)$ for $x\neq0$.
+The difference quotient is
+$\frac{f(h)-f(0)}h=\sin(1/h)$.
+Choose $h_n=2/(\pi n)\to0$; then
+$\sin(1/h_n)=\sin(\pi n/2)$ does not converge.
+Hence $f$ is not differentiable at $0$.
+However, $|f(x)|\le|x|\to0$, so $f$ is continuous at $0$.
 \\
 
 \midrule
 
 $x^2\sin(1/x)$ at $0$ &
-Let
-$
-f(x)=x^2\sin(1/x)
-$
-for $x\neq0$ and $f(0)=0$. Then
-$
-\frac{f(h)-f(0)}{h}
-=
-h\sin(1/h).
-$
-Since
-$
-|h\sin(1/h)|\le|h|\to0,
-$
-the squeeze theorem gives
-$
-\boxed{f'(0)=0}.
-$
-\\
-
-\midrule
-
-Piecewise exponential: corner &
-Let
-$
-g(x)=
-\begin{cases}
-e^{-x},&x>0,\\
-1,&x\le0.
-\end{cases}
-$
-Then $g$ is continuous at $0$, but
-$
-g'_+(0)
-=
-\lim_{h\to0^+}\frac{e^{-h}-1}{h}
-=-1,
-\qquad
-g'_-(0)
-=
-\lim_{h\to0^-}\frac{1-1}{h}
-=0.
-$
-Since the one-sided derivatives differ,
-$
-\boxed{g\text{ is not differentiable at }0}.
-$
-\\
-
-Cube root: vertical tangent &
-For
-$
-f(x)=\sqrt[3]{x},
-$
-$
-\frac{f(x)-f(0)}{x}
-=
-\frac{x^{1/3}}{x}
-=
-x^{-2/3}\to+\infty
-\qquad(x\to0).
-$
-Hence no finite derivative exists:
-$
-\boxed{f\text{ is not differentiable at }0}.
-$
-Geometrically, the graph has a vertical tangent there.
-\\
-
-\midrule
-
-Oscillating tangent slopes &
-Let
-$
-h(x)=
-\begin{cases}
-x\sin(1/x),&x\neq0,\\
-0,&x=0.
-\end{cases}
-$
+Let $f(0)=0$ and $f(x)=x^2\sin(1/x)$ for $x\neq0$.
 Then
-$
-|h(x)-h(0)|
-=
-|x\sin(1/x)|
-\le|x|\to0,
-$
-so $h$ is continuous at $0$. But
-$
-\frac{h(x)-h(0)}{x}
-=
-\sin(1/x),
-$
-which has no limit as $x\to0$. Thus
-$
-\boxed{h\text{ is continuous but not differentiable at }0}.
-$
+$\frac{f(h)-f(0)}h=h\sin(1/h)$ and
+$|h\sin(1/h)|\le|h|\to0$.
+By the squeeze theorem,
+$\boxed{f'(0)=0}$.
+\\
+
+\midrule
+
+Piecewise corner &
+For
+$g(x)=e^{-x}$ if $x>0$ and $g(x)=1$ if $x\le0$,
+$g$ is continuous at $0$, but
+$g'_+(0)=\lim_{h\to0^+}\frac{e^{-h}-1}{h}=-1$
+and
+$g'_-(0)=\lim_{h\to0^-}\frac{1-1}{h}=0$.
+Thus $\boxed{g\text{ is not differentiable at }0}$.
+\\
+
+\midrule
+
+Vertical tangent &
+For $f(x)=\sqrt[3]{x}$,
+$\frac{f(x)-f(0)}x=x^{-2/3}\to+\infty$ as $x\to0$.
+Thus no finite derivative exists at $0$; geometrically the tangent is
+vertical.
 \\
 
 \midrule
 
 Rational--irrational function &
 Let
-$
-f(x)=
-\begin{cases}
-x,&x\in\mathbb Q,\\
-0,&x\notin\mathbb Q.
-\end{cases}
-$
-At $0$,
-$
-|f(x)-f(0)|=|f(x)|\le|x|\to0,
-$
-so $f$ is continuous. Let $x_0\neq0$. Choose rational
-$
-r_n\to x_0
-$
-and irrational
-$
-s_n\to x_0.
-$
-Then
-$
-f(r_n)=r_n\to x_0,
-\qquad
-f(s_n)=0\to0.
-$
-The two limits differ, so
-$
-\boxed{f\text{ is continuous exactly at }x=0}.
-$
+$f(x)=x$ for $x\in\mathbb Q$ and
+$f(x)=0$ for $x\notin\mathbb Q$.
+At $0$, $|f(x)|\le|x|\to0$, so $f$ is continuous.
+For $x_0\neq0$, choose rational $r_n\to x_0$ and irrational
+$s_n\to x_0$. Then
+$f(r_n)\to x_0$ but $f(s_n)\to0$.
+Hence $\boxed{f\text{ is continuous exactly at }0}$.
+\\
 
+\midrule
+
+Power-series radius &
+For $\sum a_nz^n$,
+$R=\bigl(\limsup_{n\to\infty}|a_n|^{1/n}\bigr)^{-1}$,
+with $1/0=\infty$.
+Thus $|z|<R$ gives absolute convergence and $|z|>R$ divergence.
+Examples:
+$a_n=(-1)^n/(2n+1)$ gives $\limsup|a_n|^{1/n}=1$, so $R=1$;
+$a_n=e^{in}/(4n)!$ gives limit $0$, so $R=\infty$;
+coefficients of order $1/k^2$ on even indices give $R=1$.
+\\
+
+\midrule
+
+Rationalizing a root &
+For $a_n\to0$,
+$\frac{\sqrt{1+a_n}-1}{a_n}
+\cdot
+\frac{\sqrt{1+a_n}+1}{\sqrt{1+a_n}+1}
+=
+\frac{1}{\sqrt{1+a_n}+1}$.
+Since $\sqrt{1+a_n}\to1$,
+$\boxed{\frac{\sqrt{1+a_n}-1}{a_n}\to\frac12}$.
+\\
+
+\midrule
+
+Spring oscillator &
+At equilibrium,
+$
+-mg+ks_0=0
+\Rightarrow
+s_0=\frac{mg}{k}.
+$
+Let $x(t)$ be the displacement from equilibrium. Then Newton's law gives
+$
+m\ddot{x}+kx=0,
+\qquad
+\ddot{x}+\omega^2x=0,
+\qquad
+\omega=\sqrt{\frac{k}{m}}.
+$
+The characteristic roots are
+$
+\lambda=\pm i\omega,
+$
+hence
+$
+x(t)=C_1\sin(\omega t)+C_2\cos(\omega t).
+$
+For
+$
+x(0)=x_0,
+\quad
+\dot{x}(0)=v_0,
+$
+$
+\boxed{
+x(t)=\frac{v_0}{\omega}\sin(\omega t)+x_0\cos(\omega t)
+}.
+$
+Moreover,
+$
+T=\frac{2\pi}{\omega},
+\
+\nu=\frac{\omega}{2\pi},
+\
+A=\sqrt{x_0^2+\frac{v_0^2}{\omega^2}}.
+$
+The energy
+$
+E(t)=\frac{m}{2}\dot{x}(t)^2+\frac{k}{2}x(t)^2
+$
+is conserved because
+$
+E'(t)
+=
+\dot{x}(t)\bigl(m\ddot{x}(t)+kx(t)\bigr)
+=
+0.
+$
+Thus
+$
+\boxed{
+E(t)=E(0)=\frac{m}{2}v_0^2+\frac{k}{2}x_0^2
+}.
+$
 \\
 
 \bottomrule
@@ -467,7 +390,334 @@ $
 }
 \toprule
 
-% ...
+Subsequence criterion &
+If $a_n\to L$ and $b_k=a_{n_k}$ is a subsequence, then
+$n_k\ge k$.
+For $\varepsilon>0$, choose $N$ with
+$n\ge N\Rightarrow|a_n-L|<\varepsilon$.
+For $k\ge N$,
+$n_k\ge k\ge N$, hence
+$|b_k-L|=|a_{n_k}-L|<\varepsilon$.
+Thus $\boxed{b_k\to L}$.
+\\
+
+\midrule
+
+Dominant exponential &
+For
+$\frac{(-2024)^n+(-2025)^n}
+{(-2024)^{n+1}-(-2025)^n}$,
+divide numerator and denominator by $(-2025)^n$:
+$\frac{(2024/2025)^n+1}
+{(2024/2025)^n(-2024)-1}$.
+Since $(2024/2025)^n\to0$, the limit is
+$\boxed{-1}$.
+\\
+
+\midrule
+
+Root of exponential sum &
+Since
+$17^n\le5^n+11^n+17^n\le3\cdot17^n$,
+taking $n$-th roots gives
+$17\le\sqrt[n]{5^n+11^n+17^n}
+\le17\sqrt[n]{3}$.
+As $\sqrt[n]{3}\to1$, the squeeze theorem yields
+$\boxed{\sqrt[n]{5^n+11^n+17^n}\to17}$.
+\\
+
+\midrule
+
+$n$-th root of a constant &
+For $a>1$, set $b_n=\sqrt[n]{a}-1\ge0$.
+Bernoulli gives
+$1+nb_n\le(1+b_n)^n=a$,
+so $0\le b_n\le(a-1)/n\to0$.
+Hence $\sqrt[n]{a}\to1$.
+For $0<a<1$, apply the result to $1/a>1$ and take reciprocals.
+Thus $\boxed{\lim_{n\to\infty}\sqrt[n]{a}=1}$ for every $a>0$.
+\\
+
+\midrule
+
+Polynomial roots &
+For
+$p(x)=x^3-4x^2+9x-10$, testing gives $p(2)=0$.
+Polynomial division yields
+$p(x)=(x-2)(x^2-2x+5)$.
+Since
+$x^2-2x+5=(x-1)^2+4
+=(x-1-2i)(x-1+2i)$,
+the roots are
+$\boxed{2,\ 1+2i,\ 1-2i}$.
+\\
+
+\midrule
+
+Complex $n$-th roots &
+Write $w=re^{i\varphi}$. The solutions of $z^n=w$ are
+$z_k=r^{1/n}e^{i(\varphi+2\pi k)/n}$,
+$k=0,\ldots,n-1$.
+For
+$64+64\sqrt3\,i=128e^{i\pi/3}$ and $n=7$,
+$\boxed{z_k=2e^{i(\pi/21+2\pi k/7)}}$,
+$k=0,\ldots,6$.
+\\
+
+\midrule
+
+Trig identity via Euler &
+Using
+$\sin x=\frac{e^{ix}-e^{-ix}}{2i}$ and
+$\cos x=\frac{e^{ix}+e^{-ix}}2$,
+expand
+$\sin x\cos y+\sin y\cos x$.
+After cancellation,
+$\frac{e^{i(x+y)}-e^{-i(x+y)}}{2i}
+=\sin(x+y)$.
+Hence
+$\boxed{\sin(x+y)=\sin x\cos y+\cos x\sin y}$.
+\\
+
+\midrule
+
+Affine supremum &
+Let $M=\sup S$, $P=\sup\{ax+b:x\in S\}$ and $a>0$.
+For $x\in S$,
+$x\le M\Rightarrow ax+b\le aM+b$,
+so $P\le aM+b$.
+Also,
+$ax+b\le P\Rightarrow x\le(P-b)/a$;
+thus $(P-b)/a$ is an upper bound of $S$, so
+$M\le(P-b)/a$ and $aM+b\le P$.
+Therefore
+$\boxed{\sup_{x\in S}(ax+b)=a\sup_{x\in S}x+b}$.
+\\
+
+\midrule
+
+Variable integral bound &
+Use
+$
+\frac{d}{dx}\int_{g(x)}^{b}f(t)\,dt
+=
+-f(g(x))g'(x).
+$
+Here
+$
+f(t)=\sin^2(t)\cos^2(t),
+\quad
+g(x)=x^2.
+$
+Therefore
+$
+\boxed{
+G'(x)
+=
+-2x\sin^2(x^2)\cos^2(x^2)
+}.
+$
+\\
+
+\midrule
+
+Mixing tank &
+Use
+$
+\text{rate of change}
+=
+\text{inflow}-\text{outflow}.
+$
+The salt inflow is
+$
+12\cdot0.125=1.5\ \mathrm{kg/min}.
+$
+Since the volume is constantly $400\,\mathrm l$, the tank concentration is
+$
+\frac{c(t)}{400}\ \mathrm{kg/l}.
+$
+Thus the salt outflow is
+$
+12\cdot\frac{c(t)}{400}
+=
+0.03c(t)\ \mathrm{kg/min}.
+$
+Therefore
+$
+\boxed{
+c'(t)=1.5-0.03c(t),
+\qquad
+c(0)=100
+}.
+$
+\\
+
+\midrule
+
+Population model &
+Let $t$ be the number of years after 2010 and measure population in billions.
+The death rate is linear with
+$
+S(0)=0.057,
+\quad
+S(30)=0.080.
+$
+Hence
+$
+S(t)
+=
+0.057+\frac{0.080-0.057}{30}t
+=
+0.057+\frac{23}{30000}t.
+$
+The birth rate is
+$
+G(t)=0.140.
+$
+Therefore
+$
+P'(t)=G(t)-S(t)
+=
+0.083-\frac{23}{30000}t,
+\qquad
+P(0)=6.9.
+$
+Integration gives
+$
+P(t)
+=
+6.9+0.083t-\frac{23}{60000}t^2.
+$
+For 2050, $t=40$, so
+$
+P(40)
+=
+6.9+0.083\cdot40-\frac{23}{60000}\cdot40^2
+\approx9.61.
+$
+Thus
+$
+\boxed{P(2050)\approx9.61\text{ billion}}.
+$
+\\
+
+\midrule
+
+Complex polynomial roots &
+Factor out the common factor:
+$
+p(z)
+=
+2z^3+(2-4i)z^2-(6+2i)z
+=
+2z\bigl(z^2+(1-2i)z-(3+i)\bigr).
+$
+Hence $z_0=0$. For the quadratic factor,
+$
+z_{1,2}
+=
+\frac{-(1-2i)\pm
+\sqrt{(1-2i)^2+4(3+i)}}{2}.
+$
+Since
+$
+(1-2i)^2+4(3+i)=9,
+$
+we get
+$
+z_{1,2}
+=
+\frac{-1+2i\pm3}{2}.
+$
+Thus
+$
+z_1=1+i,
+\qquad
+z_2=-2+i.
+$
+Therefore
+$
+\boxed{
+p(z)=2z(z-1-i)(z+2-i)
+}
+$
+with zeros
+$
+\boxed{0,\ 1+i,\ -2+i}.
+$
+\\
+
+\midrule
+
+Optimal viewing distance &
+For an object extending from height $a$ to $b$ with $0<a<b$, the viewing angle at distance $d>0$ is
+$
+\vartheta(d)
+=
+\arctan\!\left(\frac{b}{d}\right)
+-
+\arctan\!\left(\frac{a}{d}\right).
+$
+Then
+$
+\vartheta'(d)
+=
+-\frac{b}{d^2+b^2}
++
+\frac{a}{d^2+a^2}.
+$
+Setting $\vartheta'(d)=0$ gives
+$
+a(d^2+b^2)=b(d^2+a^2)
+\Longleftrightarrow
+d^2=ab.
+$
+Since $\vartheta(d)\to0$ for $d\to0^+$ and $d\to\infty$, this critical point is the global maximum. Hence
+$
+\boxed{d=\sqrt{ab}}.
+$
+For $a=46$, $b=92$:
+$
+\boxed{d=\sqrt{46\cdot92}=46\sqrt2\approx65.05\ \mathrm m}.
+$
+\\
+
+\midrule
+
+Differentiability of $|x|^3$ &
+Write
+$
+f(x)=|x|^3=
+\begin{cases}
+x^3,&x\ge0,\\
+-x^3,&x<0.
+\end{cases}
+$
+For $x\neq0$, both branches are differentiable. At $x=0$,
+$
+f'_+(0)
+=
+\lim_{h\to0^+}\frac{h^3}{h}
+=
+\lim_{h\to0^+}h^2
+=
+0,
+$
+and
+$
+f'_-(0)
+=
+\lim_{h\to0^-}\frac{-h^3}{h}
+=
+\lim_{h\to0^-}(-h^2)
+=
+0.
+$
+Since the one-sided derivatives agree,
+$
+\boxed{f\text{ is differentiable at }0,\qquad f'(0)=0}.
+$
+\\
 
 \bottomrule
 \end{tabular}
