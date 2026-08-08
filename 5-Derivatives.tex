@@ -173,31 +173,31 @@
     called \emph{smooth functions}.
 }
 \\
-\tsThe{Basic Derivatives}{
-    Basic Derivatives, more in the end*
-    \begin{itemize}[noitemsep]
-        \item Power:
-              \(
-                  (ax^p)' = a p x^{p-1}
-              \)
-        \item Exponential:
-              \(
-                  (a^x)' = \ln(a)\, a^x
-              \)
-        \item Trig.:
-              \(
-                  (\sin x)' = \cos x,\quad (\cos x)' = -\sin x,\quad (\tan x)' = \frac{1}{\cos^2 x}
-              \)
-        \item Hyperbolic:
-              \(
-                  (\sinh x)' = \cosh x,\quad (\cosh x)' = \sinh x
-              \)
-        \item Inverse:
-              \(
-                  (\ln x)' = \frac{1}{x},\quad (\arctan x)' = \frac{1}{1+x^2}
-              \)
-    \end{itemize}
-}
+% \tsThe{Basic Derivatives}{
+%     Basic Derivatives, more in the end*
+%     \begin{itemize}[noitemsep]
+%         \item Power:
+%               \(
+%                   (ax^p)' = a p x^{p-1}
+%               \)
+%         \item Exponential:
+%               \(
+%                   (a^x)' = \ln(a)\, a^x
+%               \)
+%         \item Trig.:
+%               \(
+%                   (\sin x)' = \cos x,\quad (\cos x)' = -\sin x,\quad (\tan x)' = \frac{1}{\cos^2 x}
+%               \)
+%         \item Hyperbolic:
+%               \(
+%                   (\sinh x)' = \cosh x,\quad (\cosh x)' = \sinh x
+%               \)
+%         \item Inverse:
+%               \(
+%                   (\ln x)' = \frac{1}{x},\quad (\arctan x)' = \frac{1}{1+x^2}
+%               \)
+%     \end{itemize}
+% }
 \tsThe{Derivative Rules}{
     Derivative Rules
     \begin{itemize}[noitemsep]
@@ -329,24 +329,28 @@
     \end{itemize}
 }
 \tsThe{Second Derivative Test}{
-Let $f$ be twice differentiable near $x_0$ and suppose
-\(
-f'(x_0)=0.
-\)
-\\
-Then:
-\(
-f''(x_0)>0
-\quad \Rightarrow \quad
-x_0 \text{ is a local minimum},
-\)
-\\
-and
-\(
-f''(x_0)<0
-\quad \Rightarrow \quad
-x_0 \text{ is a local maximum}.
-\)
+    Let $f$ be twice differentiable near $x_0$. Then:
+    \begin{itemize}[noitemsep]
+        \item If $f'(x_0)=0$ and $f''(x_0)>0$, then
+        \(
+        x_0 \text{ is a local minimum}.
+        \)
+
+        \item If $f'(x_0)=0$ and $f''(x_0)<0$, then
+        \(
+        x_0 \text{ is a local maximum}.
+        \)
+
+        \item If $f''(x_0)=0$ and $f''$ changes sign at $x_0$, then
+        \(
+        x_0 \text{ is a Wendepunkt}.
+        \)
+
+        \item If, in addition, $f'(x_0)=0$, then
+        \(
+        x_0 \text{ is a Sattelpunkt}.
+        \)
+    \end{itemize}
 }
 \subsection{Taylor Approximation and Power Series}
 \tsIdea{Local Approximation by Polynomials}{

@@ -202,36 +202,175 @@
 % \subsection*{Integration by parts}
 % Should we get unavoidable cycle, where we have to integrate the same thing again, we may simply add the integral to both sides, and we thus have $2$ times the integral on the left side and then finish the integration by parts on the right hand side and in the end divide by the factor up front to get the result.
 
+% \subsection*{Derivatives and Antiderivatives}
 \subsection*{Derivatives and Antiderivatives}
-\renewcommand{\arraystretch}{0.75}
+\renewcommand{\arraystretch}{0.7}
+
 \[
-\begin{array}{lll}
-\textbf{Antiderivative} & \textbf{Function} & \textbf{Derivative}\\
+\resizebox{\linewidth}{!}{$
+\begin{array}{l@{\hspace{0.15cm}}l@{\hspace{0.15cm}}l@{\hspace{0.15cm}}l@{\hspace{0.15cm}}l}
+\textbf{Antiderivative}
+& \textbf{Function}
+& \textbf{Derivative}
+& \textbf{Differentiable on}
+& \textbf{Continuous on}
+\\
 \hline
-\frac{x^{n+1}}{n+1} & x^n & nx^{n-1}\\[0.01cm]
-\ln|x| & \frac1x=x^{-1} & -x^{-2}=-\frac1{x^2}\\[0.01cm]
-\frac23 x^{3/2} & \sqrt{x}=x^{1/2} & \frac1{2\sqrt{x}}\\[0.01cm]
-\frac{n}{n+1}x^{1/n+1} & \sqrt[n]{x}=x^{1/n} & \frac1n x^{1/n-1}\\ [0.1cm]
-\hline
-e^x & e^x & e^x\\
-\exp(x) & \exp(x) & \exp(x)\\
-\frac{1}{a(n+1)}(ax+b)^{n+1} & (ax+b)^n & n(ax+b)^{n-1}a\\
-x(\ln|x|-1) & \ln(x) & \frac1x\\
-\frac1{\ln(a)}a^x & a^x & a^x\ln(a)\\
-\frac{x}{\ln(a)}(\ln|x|-1) & \log_a|x| & \frac1{x\ln(a)}\\ [0.1cm]
-\hline 
--\cos(x) & \sin(x) & \cos(x)\\
-\sin(x) & \cos(x) & -\sin(x)\\
--\ln|\cos(x)| & \tan(x) & \frac1{\cos^2(x)}\\
-\ln|\sin(x)| & \cot(x) & -\frac1{\sin^2(x)}\\
-x\arcsin(x)+\sqrt{1-x^2} & \arcsin(x) & \frac1{\sqrt{1-x^2}}\\
-x\arccos(x)-\sqrt{1-x^2} & \arccos(x) & -\frac1{\sqrt{1-x^2}}\\
-x\arctan(x)-\frac12\ln(x^2+1) & \arctan(x) & \frac1{x^2+1}\\
-\ln|\sin(x)| & \cot(x) & -\frac1{\sin^2(x)}\\
-\cosh(x) & \sinh(x) & \cosh(x)\\
-\sinh(x) & \cosh(x) & \sinh(x)\\
-\ln|\cosh(x)| & \tanh(x) & \frac1{\cosh^2(x)}\\
+
+\frac{x^{n+1}}{n+1}
+& x^n
+& nx^{n-1}
+& \mathbb R
+& \mathbb R
+\\[0.05cm]
+
+\ln|x|
+& \frac1x=x^{-1}
+& -x^{-2}=-\frac1{x^2}
+& \mathbb R\setminus\{0\}
+& \mathbb R\setminus\{0\}
+\\[0.05cm]
+
+\frac23 x^{3/2}
+& \sqrt{x}=x^{1/2}
+& \frac1{2\sqrt{x}}
+& (0,\infty)
+& [0,\infty)
+\\[0.05cm]
+
+\frac{n}{n+1}x^{1/n+1}
+& \sqrt[n]{x}=x^{1/n}
+& \frac1n x^{1/n-1}
+& \hspace{-0.18cm} \begin{array}{l}
+(0,\infty),\ n\text{ even}\\
+\mathbb R\setminus\{0\},\ n\text{ odd}
 \end{array}
+& \hspace{-0.18cm} \begin{array}{l}
+[0,\infty),\ n\text{ even}\\
+\mathbb R,\ n\text{ odd}
+\end{array}
+\\[0.1cm]
+
+\hline
+
+e^x
+& e^x
+& e^x
+& \mathbb R
+& \mathbb R
+\\
+
+\exp(x)
+& \exp(x)
+& \exp(x)
+& \mathbb R
+& \mathbb R
+\\
+
+\frac{1}{a(n+1)}(ax+b)^{n+1}
+& (ax+b)^n
+& n(ax+b)^{n-1}a
+& \mathbb R
+& \mathbb R
+\\
+
+x(\ln x-1)
+& \ln(x)
+& \frac1x
+& (0,\infty)
+& (0,\infty)
+\\
+
+\frac1{\ln(a)}a^x
+& a^x
+& a^x\ln(a)
+& \mathbb R
+& \mathbb R
+\\
+
+\frac{x}{\ln(a)}(\ln|x|-1)
+& \log_a|x|
+& \frac1{x\ln(a)}
+& \mathbb R\setminus\{0\}
+& \mathbb R\setminus\{0\}
+\\[0.1cm]
+
+\hline 
+
+-\cos(x)
+& \sin(x)
+& \cos(x)
+& \mathbb R
+& \mathbb R
+\\
+
+\sin(x)
+& \cos(x)
+& -\sin(x)
+& \mathbb R
+& \mathbb R
+\\
+
+-\ln|\cos(x)|
+& \tan(x)
+& \frac1{\cos^2(x)}
+& \mathbb R\setminus
+  \{\tfrac\pi2+k\pi:k\in\mathbb Z\}
+& \mathbb R\setminus
+  \{\tfrac\pi2+k\pi:k\in\mathbb Z\}
+\\
+
+\ln|\sin(x)|
+& \cot(x)
+& -\frac1{\sin^2(x)}
+& \mathbb R\setminus\{k\pi:k\in\mathbb Z\}
+& \mathbb R\setminus\{k\pi:k\in\mathbb Z\}
+\\
+
+x\arcsin(x)+\sqrt{1-x^2}
+& \arcsin(x)
+& \frac1{\sqrt{1-x^2}}
+& (-1,1)
+& [-1,1]
+\\
+
+x\arccos(x)-\sqrt{1-x^2}
+& \arccos(x)
+& -\frac1{\sqrt{1-x^2}}
+& (-1,1)
+& [-1,1]
+\\
+
+x\arctan(x)-\frac12\ln(x^2+1)
+& \arctan(x)
+& \frac1{x^2+1}
+& \mathbb R
+& \mathbb R
+\\
+
+\cosh(x)
+& \sinh(x)
+& \cosh(x)
+& \mathbb R
+& \mathbb R
+\\
+
+\sinh(x)
+& \cosh(x)
+& \sinh(x)
+& \mathbb R
+& \mathbb R
+\\
+
+\ln(\cosh(x))
+& \tanh(x)
+& \frac1{\cosh^2(x)}
+& \mathbb R
+& \mathbb R
+\\
+
+\end{array}
+$}
 \]
 
 % \subsection*{Further Derivatives}
